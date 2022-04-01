@@ -1,0 +1,60 @@
+<section class="w-full h-screen py-4">
+
+
+
+    <div class="flex">
+        <h2 class="text-2xl text-center">Portfolio</h2>
+
+    </div>
+
+
+
+    <swiper class="" [config]="swiperConfig">
+
+
+        <ng-template swiperSlide *ngFor="let portfolio of portfolios, let myIndex=index;">
+
+
+
+            <div class="h-full space-y-4">
+
+                <figure class="h-36 rounded-md overflow-hidden">
+                    <img class="" src="{{portfolio.img}}" alt="">
+                </figure>
+
+                <h2 class="">{{portfolio.title}}</h2>
+
+                <p class="">{{portfolio.description}}</p>
+
+                <div class="flex gap-2">
+                    <div class="badge badge-sm">Html</div>
+                    <div class="badge badge-sm">CSS</div>
+                    <div class="badge badge-sm">javascript</div>
+                </div>
+
+                <div class="flex gap-2 justify-between">
+
+                    <div class="flex gap-2 ">
+
+                        <button class=""><i class=" bi bi-pencil"></i></button>
+                        <button class=""><i class="bi bi-trash"></i></button>
+
+                    </div>
+
+                    <div class="flex gap-2">
+
+                        <button class="btn btn-primary btn-xs">Live</button>
+                        <button class="btn btn-primary btn-xs">github</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </ng-template>
+
+
+    </swiper>
+
+
+</section>

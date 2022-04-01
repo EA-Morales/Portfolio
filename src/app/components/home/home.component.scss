@@ -1,0 +1,22 @@
+@import "../../../styles/variables";
+
+h1 {
+  color: $primary-color;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+p {
+  color: $secondary-color;
+
+  span {
+    color: $primary-color;
+  }
+
+  .cursive {
+    font-family: $nanum-font;
+    color: $tertiary-color;
+  }
+}
