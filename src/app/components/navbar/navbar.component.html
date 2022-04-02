@@ -1,0 +1,64 @@
+<nav class="fixed
+          bottom-0
+          md:static
+          md:top-0
+          flex flex-wrap
+          items-center
+          justify-between
+          w-full
+          py-4
+          md:py-0
+          px-4
+          text-lg text-gray-700
+          bg-white
+        ">
+  <div class="flex gap-3">
+    <a href="#">
+      <img alt="" class="h-5" src="../../../assets/images/logo.png">
+    </a>
+    <a href="#">
+      <img alt="" class="h-5" src="../../../assets/images/APLogo-20-20.png">
+    </a>
+  </div>
+
+  <i [matMenuTriggerFor]="menu" class="fa-solid fa-bars text-[#e96269] h-6 w-6 cursor-pointer md:hidden block"
+     id="menu-button"></i>
+
+  <mat-menu #menu="matMenu">
+    <button class="hover:bg-[#e96269]" mat-menu-item>About Me</button>
+    <button mat-menu-item>Portfolio</button>
+    <button mat-menu-item>Experience</button>
+    <button mat-menu-item>Education</button>
+    <button mat-menu-item>Skills</button>
+    <button class="text-[#e96269]" mat-menu-item>Login</button>
+  </mat-menu>
+
+  <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+    <ul class="
+              pt-4
+              text-base text-gray-700
+              md:flex
+              md:justify-between
+              md:pt-0">
+      <li>
+        <a class="md:p-4 py-2 block hover:text-[#e96269]" href="#">About Me</a>
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-[#e96269]" href="#">Portfolio</a>
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-[#e96269]" href="#">Experience</a>
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-[#e96269]" href="#">Education</a>
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-[#e96269]" href="#">Skills</a>
+      </li>
+      <li>
+        <a class="md:p-4 py-2 block hover:text-[#e72f36] text-[#e96269]" href="#">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+

@@ -1,5 +1,5 @@
-import { Portfolio } from './../../portfolio';
-import { Cards } from './../../mock-portfolio';
+import {Portfolio} from './../../portfolio';
+import {Cards} from './../../mock-portfolio';
 import {
   Component,
   OnInit,
@@ -10,11 +10,11 @@ import {
 } from '@angular/core';
 
 //Formularios
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 //Swiper
-import { SwiperComponent } from 'swiper/angular';
-import SwiperCore, { Navigation, Pagination, SwiperOptions } from 'swiper';
+import {SwiperComponent} from 'swiper/angular';
+import SwiperCore, {Navigation, Pagination, SwiperOptions} from 'swiper';
 import Swiper from 'swiper';
 
 @Component({
@@ -27,6 +27,7 @@ export class PortfolioComponent implements OnInit {
   public swiperConfig: SwiperOptions = {
     pagination: true,
     spaceBetween: 15,
+    centeredSlides: true,
   };
 
   portfolios = Cards;
@@ -41,7 +42,8 @@ export class PortfolioComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+  }
 
   ngOnInit(): void {
     Swiper.use([Pagination, Navigation]);

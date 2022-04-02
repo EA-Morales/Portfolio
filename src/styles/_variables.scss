@@ -1,12 +1,14 @@
 // Import google fonts
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Nanum+Pen+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Nanum+Pen+Script&family=Poppins:wght@600&display=swap");
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
 // Google Fonts
 $nanum-font: "Nanum Pen Script", cursive;
 $karla-font: "Karla", sans-serif;
+$poppins: 'Poppins', sans-serif;
 
-// Colors
 $primary-color: #e96269;
 $secondary-color: #696969;
 $tertiary-color: #b3b3b3;
+$alternative-color: #e72f36

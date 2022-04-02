@@ -1,40 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //reactive forms
-import { ReactiveFormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
-//modules
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Routing Module
+import {AppRoutingModule} from './app-routing.module';
 
-//components
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
+// App component
+import {AppComponent} from './app.component';
 
-//swiper
-import { SwiperModule } from 'swiper/angular';
-import { ModalComponent } from './components/modal/modal.component';
+// Module of my webcomponents
+import {ComponentsModule} from "./components/components.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    PortfolioComponent,
-    ModalComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SwiperModule,
     ReactiveFormsModule,
+    ComponentsModule
   ],
-  exports: [SwiperModule],
+  exports: [ComponentsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
