@@ -1,25 +1,29 @@
 <section class="w-full h-screen py-4">
-
-
   <h2 class="text-2xl text-center">Portfolio</h2>
-  <p class="text-center mb-14">Most recent works</p>
+  <p class="text-center mb-10">Most recent works</p>
 
-
-  <swiper [config]="swiperConfig" class="">
-
-
-    <ng-template *ngFor="let portfolio of portfolios, let myIndex=index;" swiperSlide>
-
-
-      <div class="h-full space-y-4 px-5">
-
-        <figure class="w-full rounded-2xl overflow-hidden mx-auto">
-          <img alt="" class="" src="{{portfolio.img}}">
+  <swiper [config]="swiperConfig" class="max-w-[768px] h-[369px] p-[24px]">
+    <ng-template
+      class="h-full sm:max-h-52"
+      *ngFor="let portfolio of portfolios; let myIndex = index"
+      swiperSlide>
+      <div
+        class="h-full space-y-4 px-5 || sm:flex sm:max-h-52 sm:basis-1/2 sm:gap-5">
+        <figure class="mx-auto">
+          <img
+            alt=""
+            class="max-w-[265px] md:max-w-[320px] h-auto rounded-2xl"
+            src="{{ portfolio.img }}" />
         </figure>
 
-        <h2 class="">{{portfolio.title}}</h2>
-
-        <p class="">{{portfolio.description}}</p>
+        <div class="md:basis-1/2 md:flex md:flex-col md:gap-4">
+          <h2 class="text-lg">{{ portfolio.title }}</h2>
+          <p class="">{{ portfolio.description }}</p>
+          <button
+            class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white">
+            Demo
+          </button>
+        </div>
 
         <!--<div class="flex gap-2">
           <div class="badge badge-sm">Html</div>
@@ -27,29 +31,18 @@
           <div class="badge badge-sm">javascript</div>
         </div>-->
 
-        <div class="flex gap-2 justify-between">
-
-          <div class="flex gap-2 ">
-
-            <button class=""><i class=" bi bi-pencil"></i></button>
+        <!-- <div class="flex gap-2 justify-between">
+          <div class="flex gap-2">
+            <button class=""><i class="bi bi-pencil"></i></button>
             <button class=""><i class="bi bi-trash"></i></button>
-
           </div>
 
           <div class="flex gap-2">
-
             <button class="btn btn-primary btn-xs">Live</button>
             <button class="btn btn-primary btn-xs">github</button>
-
           </div>
-        </div>
+        </div> -->
       </div>
-
-
     </ng-template>
-
-
   </swiper>
-
-
 </section>

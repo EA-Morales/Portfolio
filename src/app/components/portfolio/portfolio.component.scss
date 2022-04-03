@@ -1,12 +1,11 @@
-@import "swiper/scss";
-@import "swiper/scss/navigation";
-@import "swiper/scss/pagination";
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
 
-@import "../../../styles/variables";
+@import '../../../styles/variables';
 
 .swiper {
   width: 90%;
-  height: 80%;
   // background-color: aqua;
 }
 
@@ -49,6 +48,16 @@ h2 {
 
 p {
   color: $secondary-color;
+  font-family: $poppins;
+  font-weight: 400;
+}
+
+button {
+  font-family: $poppins;
+}
+
+figure {
+  overflow: initial;
 }
 
 .badge {
