@@ -1,14 +1,15 @@
 <section class="w-full mb-12 sm:mb-28">
-  <h2 class="text-2xl text-center">Portfolio</h2>
-  <p class="text-center mb-10">Most recent works</p>
+  <h2 class="text-2xl text-center mb-10">Portfolio</h2>
+  <!-- <p class="text-center mb-10">Most recent works</p> -->
 
-  <swiper [config]="swiperConfig" class="sm:h-[250px]">
+  <swiper [config]="swiperConfig" class="h-[400px] sm:h-[300px]">
     <ng-template
       class="h-full"
       *ngFor="let portfolio of portfolios; let myIndex = index"
       swiperSlide>
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <figure class="mx-auto">
+      <div
+        class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl">
+        <figure class="mx-auto lg:ml-auto">
           <img
             alt=""
             class="h-auto rounded-2xl max-w-[265px] md:max-w-[320px]"
@@ -16,7 +17,7 @@
         </figure>
 
         <div
-          class="flex flex-col p-2 gap-2 mb-10 md:basis-1/2 md:flex md:flex-col md:gap-4">
+          class="flex flex-col justify-center p-2 gap-2 md:basis-1/2 md:flex md:flex-col md:gap-4">
           <h2 class="text-lg">{{ portfolio.title }}</h2>
           <p class="text-sm">{{ portfolio.description }}</p>
           <button

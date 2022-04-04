@@ -2,16 +2,39 @@
   <h2 class="text-2xl text-center">About me</h2>
   <p class="text-center mb-10">Some introduction</p>
 
-  <div class="about__container grid grid-cols-1 mx-4 gap-6">
+  <div
+    class="about__container grid grid-cols-1 mx-4 gap-6 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl">
     <img
-      class="w-[200px] h-auto rounded-2xl mx-auto object-cover"
+      class="w-[200px] sm:w-[350px] h-auto rounded-2xl mx-auto object-cover"
       src="../../../assets/images/aboutme.jpg"
       alt="" />
-    <div class="about__info">
+    <div class="about__descripcion flex flex-col justify-center">
       <p class="mb-4">
         Desarrollador web con experiencia en backend y frontend y tecnologias de
         diseño y publicidad.
       </p>
+
+      <div class="about__info flex gap-2 justify-center mb-4">
+        <div class="text-center">
+          <span class="about__info-title text-[#e96269] font-bold text-xl"
+            >2 +<br
+          /></span>
+          <p class="about__info-name">
+            Años<br />
+            Experiencia
+          </p>
+        </div>
+        <div class="text-center">
+          <span class="about__info-title text-[#e96269] font-bold text-xl"
+            >4 + <br
+          /></span>
+          <p class="about__info-name">
+            Proyectos <br />
+            Completados
+          </p>
+        </div>
+      </div>
+
       <div class="flex justify-center">
         <button
           class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white max-w-fit">
