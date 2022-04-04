@@ -12,6 +12,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 
 // Swiper for JS
 import { SwiperModule } from 'swiper/angular';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SwiperModule } from 'swiper/angular';
     HomeComponent,
     NavbarComponent,
     PortfolioComponent,
+    AboutComponent,
   ],
   imports: [CommonModule, SwiperModule, MatMenuModule],
   exports: [
@@ -26,6 +28,7 @@ import { SwiperModule } from 'swiper/angular';
     HomeComponent,
     NavbarComponent,
     PortfolioComponent,
+    AboutComponent,
   ],
 })
 export class ComponentsModule {}

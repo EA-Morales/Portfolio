@@ -1,26 +1,26 @@
-<section class="w-full h-screen py-4">
+<section class="w-full mb-12 sm:mb-28">
   <h2 class="text-2xl text-center">Portfolio</h2>
   <p class="text-center mb-10">Most recent works</p>
 
-  <swiper [config]="swiperConfig" class="max-w-[768px] h-[369px] p-[24px]">
+  <swiper [config]="swiperConfig" class="sm:h-[250px]">
     <ng-template
-      class="h-full sm:max-h-52"
+      class="h-full"
       *ngFor="let portfolio of portfolios; let myIndex = index"
       swiperSlide>
-      <div
-        class="h-full space-y-4 px-5 || sm:flex sm:max-h-52 sm:basis-1/2 sm:gap-5">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <figure class="mx-auto">
           <img
             alt=""
-            class="max-w-[265px] md:max-w-[320px] h-auto rounded-2xl"
+            class="h-auto rounded-2xl max-w-[265px] md:max-w-[320px]"
             src="{{ portfolio.img }}" />
         </figure>
 
-        <div class="md:basis-1/2 md:flex md:flex-col md:gap-4">
+        <div
+          class="flex flex-col p-2 gap-2 mb-10 md:basis-1/2 md:flex md:flex-col md:gap-4">
           <h2 class="text-lg">{{ portfolio.title }}</h2>
-          <p class="">{{ portfolio.description }}</p>
+          <p class="text-sm">{{ portfolio.description }}</p>
           <button
-            class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white">
+            class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white max-w-fit">
             Demo
           </button>
         </div>

@@ -4,9 +4,8 @@
 
 @import '../../../styles/variables';
 
-.swiper {
+swiper {
   width: 90%;
-  // background-color: aqua;
 }
 
 .swiper-pagination-bullet {
@@ -48,8 +47,8 @@ h2 {
 
 p {
   color: $secondary-color;
-  font-family: $poppins;
-  font-weight: 400;
+  //   font-family: $poppins;
+  //   font-weight: 400;
 }
 
 button {
