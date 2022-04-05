@@ -5,9 +5,10 @@ import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 
 // Components of my webpage
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
@@ -23,6 +24,7 @@ import { SwiperModule } from 'swiper/angular';
     PortfolioComponent,
     AboutComponent,
     EducationComponent,
+    LoginComponent,
   ],
   imports: [CommonModule, SwiperModule, MatMenuModule],
   exports: [
@@ -32,6 +34,7 @@ import { SwiperModule } from 'swiper/angular';
     PortfolioComponent,
     AboutComponent,
     EducationComponent,
+    LoginComponent,
   ],
 })
 export class ComponentsModule {}
