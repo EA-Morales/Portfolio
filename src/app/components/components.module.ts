@@ -9,10 +9,11 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { AboutComponent } from './about/about.component';
+import { EducationComponent } from './education/education.component';
 
 // Swiper for JS
 import { SwiperModule } from 'swiper/angular';
-import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     PortfolioComponent,
     AboutComponent,
+    EducationComponent,
   ],
   imports: [CommonModule, SwiperModule, MatMenuModule],
   exports: [
@@ -29,6 +31,7 @@ import { AboutComponent } from './about/about.component';
     NavbarComponent,
     PortfolioComponent,
     AboutComponent,
+    EducationComponent,
   ],
 })
 export class ComponentsModule {}
