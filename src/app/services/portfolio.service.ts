@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root',
 })
-export class ProyectsService {
+export class PortfolioService {
   private apiURL = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) {}

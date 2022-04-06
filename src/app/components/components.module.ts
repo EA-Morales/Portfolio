@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// FORMULARIOS
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 // Angular Material Components
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 // Components of my webpage
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,6 +21,9 @@ import { EducationComponent } from './education/education.component';
 
 // Swiper for JS
 import { SwiperModule } from 'swiper/angular';
+import { ModalPortfolioComponent } from './portfolio/modal-portfolio/modal-portfolio.component';
+import { ModalAboutComponent } from './about/modal-about/modal-about.component';
+import { ModalHeaderComponent } from './header/modal-header/modal-header.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +34,20 @@ import { SwiperModule } from 'swiper/angular';
     AboutComponent,
     EducationComponent,
     LoginComponent,
+    ModalPortfolioComponent,
+    ModalAboutComponent,
+    ModalHeaderComponent,
   ],
-  imports: [CommonModule, SwiperModule, MatMenuModule],
+  imports: [
+    CommonModule,
+    SwiperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+  ],
   exports: [
     HeaderComponent,
     HomeComponent,
@@ -35,6 +56,11 @@ import { SwiperModule } from 'swiper/angular';
     AboutComponent,
     EducationComponent,
     LoginComponent,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
 })
 export class ComponentsModule {}

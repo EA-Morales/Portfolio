@@ -3,12 +3,15 @@
   class="min-h-fit mb-16 sm:min-h-screen pt-16 px-4 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:px-14">
   <!-- ?Article description -->
   <div class="mt-4 gap-6 sm:mt-32 flex flex-col">
-    <h1 class="text-left text-3xl">Hello! i'm <span>Agustin</span>.<br />👋</h1>
+    <h1 class="text-left text-3xl">
+      Hello! i'm <span>{{ textoInfoPersonal[0].nombreyapellido }}</span
+      >.<br />👋
+    </h1>
 
     <p class="text-xl text-left">
-      A multidisciplinary <span>developer</span> and <span>designer </span>
-      <span class="cursive">(sometimes)</span> with a passion for creating
-      engaging, entertaining user experiences.<br />✨
+      A multidisciplinary <span>{{ textoInfoPersonal[0].puesto }}</span> and
+      <span>designer </span> <span class="cursive">(sometimes)</span> with a
+      passion for creating engaging, entertaining user experiences.<br />✨
     </p>
   </div>
   <!-- ?Article description -->

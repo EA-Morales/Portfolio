@@ -1,27 +1,25 @@
+// import { AuthInterceptor } from './services/jwt.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//reactive forms
-import { ReactiveFormsModule } from '@angular/forms';
-
-// Routing Module
 import { AppRoutingModule } from './app-routing.module';
-
-// App component
 import { AppComponent } from './app.component';
 
-// Module of my webcomponents
+//Modulo de componentes
 import { ComponentsModule } from './components/components.module';
+
+//Modulo Http
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
     ComponentsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   exports: [ComponentsModule],
   providers: [],
