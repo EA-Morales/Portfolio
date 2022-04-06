@@ -1,1 +1,8 @@
-<p>experience works!</p>
+<i (click)="openDialog()" class="fa-solid fa-circle-plus" role="button"></i>
+
+<li *ngFor="let dato of prueba">
+  <p>{{ dato.establecimiento }}</p>
+  <p>{{ dato.especialidad }}</p>
+  <p>{{ dato.year }}</p>
+  <i class="fa-solid fa-pencil" (click)="edit(dato)" role="button"></i>
+</li>

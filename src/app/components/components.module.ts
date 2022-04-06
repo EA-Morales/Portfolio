@@ -12,6 +12,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // Components of my webpage
 import { NavbarComponent } from './navbar/navbar.component';
@@ -23,14 +25,16 @@ import { AboutComponent } from './about/about.component';
 import { InfoComponent } from './info/info.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
-
-// Swiper for JS
-import { SwiperModule } from 'swiper/angular';
+import { SkillsComponent } from './skills/skills.component';
 import { ModalPortfolioComponent } from './portfolio/modal-portfolio/modal-portfolio.component';
 import { ModalAboutComponent } from './about/modal-about/modal-about.component';
 import { ModalHeaderComponent } from './header/modal-header/modal-header.component';
 import { ModalEducationComponent } from './education/modal-education/modal-education.component';
 import { ModalExperienceComponent } from './experience/modal-experience/modal-experience.component';
+
+// Swiper for JS
+import { SwiperModule } from 'swiper/angular';
+import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,8 @@ import { ModalExperienceComponent } from './experience/modal-experience/modal-ex
     ExperienceComponent,
     ModalEducationComponent,
     ModalExperienceComponent,
+    SkillsComponent,
+    ModalSkillsComponent,
   ],
   imports: [
     CommonModule,
@@ -59,6 +65,8 @@ import { ModalExperienceComponent } from './experience/modal-experience/modal-ex
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    CdkAccordionModule,
+    MatExpansionModule,
   ],
   exports: [
     HeaderComponent,
@@ -75,6 +83,7 @@ import { ModalExperienceComponent } from './experience/modal-experience/modal-ex
     MatInputModule,
     InfoComponent,
     ExperienceComponent,
+    SkillsComponent,
   ],
 })
 export class ComponentsModule {}

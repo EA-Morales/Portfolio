@@ -1,0 +1,33 @@
+<div class="min-h-screen mx-4">
+  <h2 class="text-2xl text-center">Skills</h2>
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Self aware panel </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{ panelOpenState ? 'open' : 'closed' }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+      <button (click)="openDialog()" class="">
+        <i class="fa-solid fa-pencil"></i>
+      </button>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <!-- <mat-panel-title> Self aware panel </mat-panel-title> -->
+        <mat-panel-description class="flex justify-center">
+          <h2 class="">Frontend</h2>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="flex flex-col justify-center">
+        <li *ngFor="let prueba of pruebas">
+          <h5 class="text-center">{{ prueba.titulo }}</h5>
+          <p>{{ prueba.value }}%</p>
+        </li>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

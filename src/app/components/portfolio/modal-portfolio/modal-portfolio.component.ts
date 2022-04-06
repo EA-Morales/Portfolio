@@ -25,12 +25,13 @@ export class ModalPortfolioComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data: proyects,
     private readonly fb: FormBuilder,
-    private _dataSvc: PortfolioService) {}
+    private _dataSvc: PortfolioService
+  ) {}
 
   ngOnInit(): void {
     this.proyectsform = this.initProyectsForm();
   }
-  
+
   initProyectsForm(): FormGroup {
     return this.fb.group({
       id: [],
