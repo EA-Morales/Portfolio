@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { BannerService } from './../../../services/banner.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-header',
@@ -6,7 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-header.component.scss'],
 })
 export class ModalHeaderComponent implements OnInit {
-  constructor() {}
+  infopersonalform!: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: any,
+    private readonly fb: FormBuilder,
+    private _dataSvc: BannerService
+  ) {}
+
+  ngOnInit(): void {
+    this.infopersonalform = this.datosform();
+  }
+
+  datosform(): FormGroup {
+    return this.fb.group({
+      id: [1],
+      nombreyapellido: [''],
+      puesto: [''],
+      ubicacion: [''],
+    });
+  }
+
+  onSubmitDatos() {
+    this._dataSvc.addinfoPersonal(this.infopersonalform.value).subscribe();
+  }
 }

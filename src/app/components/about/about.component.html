@@ -34,11 +34,15 @@
         </div>
       </div>
 
-      <div class="flex justify-center">
+      <div class="flex justify-between">
         <button
           class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white max-w-fit">
           Donwload CV <i class="fa-solid fa-download"></i>
         </button>
+
+        <span (click)="openDialog()" role="button" class="float-end">
+          <i class="bi bi-pencil"></i>
+        </span>
       </div>
     </div>
   </div>
