@@ -2,27 +2,38 @@
 
 <mat-dialog-content>
   <form
-    [formGroup]="proyectsform"
     (ngSubmit)="onSubmitProyects()"
+    [formGroup]="proyectsform"
     class="datos-form">
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Titulo</mat-label>
-      <input formControlName="titulo" [ngModel]="data.titulo" matInput />
+
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Imagen</mat-label>
+      <input [ngModel]="data.img" formControlName="img" matInput/>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="outline">
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Titulo</mat-label>
+      <input [ngModel]="data.titulo" formControlName="titulo" matInput/>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Descripcion</mat-label>
       <textarea
-        matInput
-        formControlName="descripcion"
         [ngModel]="data.descripcion"
         cols="30"
+        formControlName="descripcion"
+        matInput
         rows="10"></textarea>
     </mat-form-field>
 
+    <mat-form-field appearance="outline" class="example-full-width">
+      <mat-label>Link</mat-label>
+      <input [ngModel]="data.link" formControlName="link" matInput/>
+    </mat-form-field>
+
     <mat-dialog-actions class="float-end">
-      <button type="submit" mat-raised-button mat-dialog-close>Enviar</button>
-      <button mat-raised-button mat-dialog-close>Close</button>
+      <button mat-dialog-close mat-raised-button type="submit">Enviar</button>
+      <button mat-dialog-close mat-raised-button>Close</button>
     </mat-dialog-actions>
   </form>
 </mat-dialog-content>

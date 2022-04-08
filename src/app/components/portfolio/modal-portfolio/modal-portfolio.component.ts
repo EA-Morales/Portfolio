@@ -1,17 +1,17 @@
 // Angular Cores
-import { Component, OnInit, Inject } from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 
 // Servicio Proyectos
-import { PortfolioService } from 'src/app/services/portfolio.service';
+import {PortfolioService} from 'src/app/services/portfolio.service';
 
 // FORMULARIOS
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 // ANGULAR MATERIAL DIALOG
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 // INTERFACE PROYECTOS
-import { proyects } from 'src/app/models/interfaceDatos';
+import {proyects} from 'src/app/models/interfaceDatos';
 
 @Component({
   selector: 'app-modal-portfolio',
@@ -26,7 +26,8 @@ export class ModalPortfolioComponent implements OnInit {
     public data: proyects,
     private readonly fb: FormBuilder,
     private _dataSvc: PortfolioService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.proyectsform = this.initProyectsForm();
@@ -35,8 +36,10 @@ export class ModalPortfolioComponent implements OnInit {
   initProyectsForm(): FormGroup {
     return this.fb.group({
       id: [],
+      img: [],
       titulo: [],
       descripcion: [],
+      link: [],
     });
   }
 

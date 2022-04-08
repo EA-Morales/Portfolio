@@ -26,6 +26,8 @@ export interface skills {
 
 export interface proyects {
   id: number;
+  img: string;
   titulo: string;
   descripcion: string;
+  link: string;
 }
