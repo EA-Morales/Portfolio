@@ -1,8 +1,36 @@
-<i (click)="openDialog()" class="fa-solid fa-circle-plus" role="button"></i>
-
-<li *ngFor="let dato of prueba">
+<!-- <li *ngFor="let dato of prueba">
   <p>{{ dato.establecimiento }}</p>
   <p>{{ dato.especialidad }}</p>
   <p>{{ dato.year }}</p>
   <i class="fa-solid fa-pencil" (click)="edit(dato)" role="button"></i>
-</li>
+</li> -->
+
+<div class="mt-8">
+  <div *ngFor="let dato of prueba; let even = even">
+    <div class="mx-4 grid grid-cols-[2fr_50px_2fr]">
+      <span>
+        <div *ngIf="even === true">
+          <p>{{ dato.establecimiento }}</p>
+          <p>{{ dato.especialidad }}</p>
+          <p>{{ dato.year }}</p>
+          <!-- <p>{{ even }}</p> -->
+        </div>
+      </span>
+      <div class="central__box flex flex-col items-center">
+        <span
+          class="inline-block h-[13px] w-[13px] rounded-full bg-[#e96269]"></span>
+        <span class="h-full border-[1px] border-[#e96269]"></span>
+      </div>
+      <span>
+        <div *ngIf="even === false" class="text-right">
+          <p>{{ dato.establecimiento }}</p>
+          <p>{{ dato.especialidad }}</p>
+          <p>{{ dato.year }}</p>
+          <!-- <p>{{ even }}</p> -->
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+
+<i (click)="openDialog()" class="fa-solid fa-circle-plus" role="button"></i>
