@@ -5,15 +5,14 @@
     (ngSubmit)="onSubmitProyects()"
     [formGroup]="proyectsform"
     class="datos-form">
-
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Imagen</mat-label>
-      <input [ngModel]="data.img" formControlName="img" matInput/>
+      <input [ngModel]="data.img" formControlName="img" matInput />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Titulo</mat-label>
-      <input [ngModel]="data.titulo" formControlName="titulo" matInput/>
+      <input [ngModel]="data.titulo" formControlName="titulo" matInput />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
@@ -28,7 +27,7 @@
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Link</mat-label>
-      <input [ngModel]="data.link" formControlName="link" matInput/>
+      <input [ngModel]="data.link" formControlName="link" matInput />
     </mat-form-field>
 
     <mat-dialog-actions class="float-end">

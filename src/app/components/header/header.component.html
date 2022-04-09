@@ -10,8 +10,9 @@
 
     <p class="text-xl text-left">
       A multidisciplinary <span>{{ textoInfoPersonal[0].puesto }}</span> and
-      <span>designer </span> <span class="cursive">(sometimes)</span> with a
-      passion for creating engaging, entertaining user experiences.<br />✨
+      <span>designer </span> <span class="cursive">(sometimes)</span> from
+      <span>{{ textoInfoPersonal[0].ubicacion }}</span> with a passion for
+      creating engaging, entertaining user experiences.<br />✨
     </p>
   </div>
   <!-- ?Article description -->
@@ -22,10 +23,14 @@
       class="w-48 h-48 rounded-full shadow-xl"
       src="../../../assets/images/avatar.png"
       alt="" />
+    <span
+      *ngIf="isLoggedIn"
+      (click)="openDialog()"
+      role="button"
+      class="bg-[#e96269] h-5 w-5 flex justify-center items-center rounded-full">
+      <i class="fa-solid fa-plus text-white"></i>
+    </span>
   </div>
   <!-- ?Avatar Image -->
 </article>
 <!-- ?Main body Article -->
-<span (click)="openDialog()" role="button" class="float-end">
-  <i class="fa-solid fa-pencil"></i>
-</span>

@@ -1,9 +1,8 @@
-// CORE COMPONENTS
+// Core modules
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 // Componentes y Service
 import { ModalPortfolioComponent } from './modal-portfolio/modal-portfolio.component';
-import { PortfolioService } from 'src/app/services/portfolio.service';
 
 // Interface
 import { proyects } from 'src/app/models/interfaceDatos';
@@ -19,8 +18,9 @@ import { AuthService } from 'src/app/services/auth.service';
 // import { SwiperComponent } from 'swiper/angular';
 import { Navigation, Pagination, SwiperOptions } from 'swiper';
 import Swiper from 'swiper';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
-import { Cards } from './../../mock-portfolio';
+//import { Cards } from './../../mock-portfolio';
 
 @Component({
   selector: 'app-portfolio',
@@ -35,7 +35,7 @@ export class PortfolioComponent implements OnInit {
 
   temporal: proyects[] = [];
 
-  portfolios = Cards;
+  //portfolios = Cards;
 
   // SWIPER CONFIG
   public swiperConfig: SwiperOptions = {
@@ -44,6 +44,7 @@ export class PortfolioComponent implements OnInit {
     spaceBetween: 15,
     centeredSlides: true,
   };
+
   // SWIPER CONFIG
 
   constructor(
@@ -54,6 +55,12 @@ export class PortfolioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.authService.isUserLoggedIn.subscribe(res => {
+      this.isLoggedIn = res;
+      console.log(res);
+    });
+    this.getProyects();
+
     Swiper.use([Pagination, Navigation]);
   }
 
@@ -82,8 +89,7 @@ export class PortfolioComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalPortfolioComponent, {
-      width: '80%',
-      data: this.temporal,
+      data: this.prueba,
     });
 
     dialogRef.afterClosed().subscribe(res => {

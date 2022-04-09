@@ -6,14 +6,26 @@
 </li> -->
 
 <div class="mt-8">
+  <span (click)="openDialog()" role="button" class="float-end">
+    <i class="bi bi-plus-circle"></i>
+  </span>
   <div *ngFor="let dato of prueba; let even = even">
     <div class="mx-4 grid grid-cols-[2fr_50px_2fr]">
       <span>
-        <div *ngIf="even === true">
-          <p>{{ dato.establecimiento }}</p>
-          <p>{{ dato.especialidad }}</p>
-          <p>{{ dato.year }}</p>
-          <!-- <p>{{ even }}</p> -->
+        <div *ngIf="even === true" class="flex justify-between">
+          <div>
+            <p class="text-sm">{{ dato.establecimiento }}</p>
+            <p class="text-xs">{{ dato.especialidad }}</p>
+            <p class="text-xs">{{ dato.year }}</p>
+          </div>
+          <div>
+            <span (click)="edit(dato)" role="button" class="mb-2">
+              <i class="bi bi-pencil" style="font-size: 1rem"></i>
+            </span>
+            <span (click)="delete(dato)" role="button" class="">
+              <i class="bi bi-trash" style="font-size: 1rem"></i>
+            </span>
+          </div>
         </div>
       </span>
       <div class="central__box flex flex-col items-center">
@@ -22,15 +34,24 @@
         <span class="h-full border-[1px] border-[#e96269]"></span>
       </div>
       <span>
-        <div *ngIf="even === false" class="text-right">
-          <p>{{ dato.establecimiento }}</p>
-          <p>{{ dato.especialidad }}</p>
-          <p>{{ dato.year }}</p>
+        <div *ngIf="even === false" class="flex justify-between">
+          <div>
+            <p>{{ dato.establecimiento }}</p>
+            <p>{{ dato.especialidad }}</p>
+            <p>{{ dato.year }}</p>
+          </div>
+          <div>
+            <span (click)="edit(dato)" role="button" class="mb-2">
+              <i class="bi bi-pencil" style="font-size: 1rem"></i>
+            </span>
+            <span (click)="delete(dato)" role="button" class="">
+              <i class="bi bi-trash" style="font-size: 1rem"></i>
+            </span>
+          </div>
+
           <!-- <p>{{ even }}</p> -->
         </div>
       </span>
     </div>
   </div>
 </div>
-
-<i (click)="openDialog()" class="fa-solid fa-circle-plus" role="button"></i>

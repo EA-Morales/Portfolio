@@ -1,11 +1,20 @@
 <section class="w-full mb-12 sm:mb-28">
-  <h2 class="text-2xl text-center mb-10">Portfolio</h2>
+  <div class="text-center">
+    <h2 class="text-2xl inline-block text-center mb-10">Portfolio</h2>
+    <span
+      *ngIf="isLoggedIn"
+      (click)="openDialog()"
+      role="button"
+      class="float-end">
+      <i class="bi bi-plus-circle"></i>
+    </span>
+  </div>
   <!-- <p class="text-center mb-10">Most recent works</p> -->
 
   <swiper [config]="swiperConfig" class="h-[400px] sm:h-[300px]">
     <ng-template
+      *ngFor="let portfolio of prueba; let myIndex = index"
       class="h-full"
-      *ngFor="let portfolio of portfolios; let myIndex = index"
       swiperSlide>
       <div
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl">
@@ -18,16 +27,19 @@
 
         <div
           class="flex flex-col justify-center p-2 gap-2 md:basis-1/2 md:flex md:flex-col md:gap-4">
-          <h2 class="text-lg">{{ portfolio.title }}</h2>
-          <p class="text-sm">{{ portfolio.description }}</p>
+          <h2 class="text-lg">{{ portfolio.titulo }}</h2>
+          <p class="text-sm">{{ portfolio.descripcion }}</p>
           <div class="flex justify-between">
             <button
               class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white max-w-fit">
               Demo
             </button>
-            <button (click)="openDialog()" class="">
-              <i class="fa-solid fa-pencil"></i>
-            </button>
+            <span (click)="edit(portfolio)" role="button" class="mb-2">
+              <i class="bi bi-pencil" style="font-size: 1rem"></i>
+            </span>
+            <span (click)="delete(portfolio)" role="button" classs="">
+              <i class="bi bi-trash" style="font-size: 1rem"></i>
+            </span>
           </div>
         </div>
 
