@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // Components of my webpage
 import { NavbarComponent } from './navbar/navbar.component';
@@ -69,6 +70,7 @@ import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.compone
     CdkAccordionModule,
     MatExpansionModule,
     MatProgressBarModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     HeaderComponent,

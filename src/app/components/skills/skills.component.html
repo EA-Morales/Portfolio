@@ -1,28 +1,39 @@
 <div class="min-h-screen mx-4">
   <h2 class="text-2xl text-center">Skills</h2>
-  <mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <!-- <mat-panel-title> Self aware panel </mat-panel-title> -->
-        <mat-panel-description class="flex justify-center">
-          <h2 class="">Frontend</h2>
+
+  <span (click)="openDialog()" role="button" class="float-end overflow-hidden">
+    <i class="bi bi-plus-circle"></i>
+  </span>
+
+  <li *ngFor="let prueba of pruebas">
+    <div class="col d-flex justify-content-center">
+      <div>
+        <h5 class="text-center">{{ prueba.titulo }}</h5>
+        <mat-progress-spinner
+          [value]="prueba.value"
+          [color]="prueba.color"
+          aria-label="Rating">
+        </mat-progress-spinner>
+        <div style="position: relative; top: -60px; left: 35px">
+          {{ prueba.value }}%
+        </div>
+        <div class="d-flex justify-content-between">
           <span
-            (click)="openDialog()"
+            *ngIf="isLoggedIn"
+            (click)="edit(prueba)"
             role="button"
-            class="float-end overflow-hidden">
-            <i class="bi bi-plus-circle"></i>
+            class="mb-2">
+            <i class="bi bi-pencil" style="font-size: 1rem"></i>
           </span>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div class="flex flex-col justify-center">
-        <li *ngFor="let prueba of pruebas" class="list-none">
-          <h5 class="text-center">{{ prueba.titulo }}</h5>
-          <mat-progress-bar
-            mode="determinate"
-            value="{{ prueba.value }}"></mat-progress-bar>
-          <p>{{ prueba.value }}%</p>
-        </li>
+          <span
+            *ngIf="isLoggedIn"
+            (click)="delete(prueba)"
+            role="button"
+            class="mb-2">
+            <i class="bi bi-trash" style="font-size: 1rem"></i>
+          </span>
+        </div>
       </div>
-    </mat-expansion-panel>
-  </mat-accordion>
+    </div>
+  </li>
 </div>

@@ -5,51 +5,61 @@
   <i class="fa-solid fa-pencil" (click)="edit(dato)" role="button"></i>
 </li> -->
 
-<div class="mt-8">
+<div class="mt-8 mx-4">
   <span (click)="openDialog()" role="button" class="float-end">
     <i class="bi bi-plus-circle"></i>
   </span>
   <div *ngFor="let dato of prueba; let even = even">
-    <div class="mx-4 grid grid-cols-[2fr_50px_2fr]">
+    <div class="mx-4 grid grid-cols-[2fr_25px_2fr]">
       <span>
         <div *ngIf="even === true" class="flex justify-between">
-          <div>
-            <p class="text-sm">{{ dato.establecimiento }}</p>
+          <div class="w-full text-left">
+            <h2 class="text-sm font-bold">{{ dato.establecimiento }}</h2>
             <p class="text-xs">{{ dato.especialidad }}</p>
             <p class="text-xs">{{ dato.year }}</p>
-          </div>
-          <div>
-            <span (click)="edit(dato)" role="button" class="mb-2">
-              <i class="bi bi-pencil" style="font-size: 1rem"></i>
-            </span>
-            <span (click)="delete(dato)" role="button" class="">
-              <i class="bi bi-trash" style="font-size: 1rem"></i>
-            </span>
+            <div class="flex justify-between">
+              <span
+                (click)="edit(dato)"
+                role="button"
+                class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center">
+                <i class="bi bi-pencil text-white" style="font-size: 1rem"></i>
+              </span>
+              <span
+                (click)="delete(dato)"
+                role="button"
+                class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center">
+                <i class="bi bi-trash text-white" style="font-size: 1rem"></i>
+              </span>
+            </div>
           </div>
         </div>
       </span>
       <div class="central__box flex flex-col items-center">
         <span
-          class="inline-block h-[13px] w-[13px] rounded-full bg-[#e96269]"></span>
+          class="inline-block h-[10px] w-[10px] rounded-full bg-[#e96269]"></span>
         <span class="h-full border-[1px] border-[#e96269]"></span>
       </div>
       <span>
-        <div *ngIf="even === false" class="flex justify-between">
-          <div>
-            <p>{{ dato.establecimiento }}</p>
-            <p>{{ dato.especialidad }}</p>
-            <p>{{ dato.year }}</p>
+        <div *ngIf="even === false" class="flex">
+          <div class="w-full text-right">
+            <h2 class="text-sm font-bold">{{ dato.establecimiento }}</h2>
+            <p class="text-xs">{{ dato.especialidad }}</p>
+            <p class="text-xs">{{ dato.year }}</p>
+            <div class="flex justify-between">
+              <span
+                (click)="edit(dato)"
+                role="button"
+                class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center">
+                <i class="bi bi-pencil text-white" style="font-size: 1rem"></i>
+              </span>
+              <span
+                (click)="delete(dato)"
+                role="button"
+                class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center">
+                <i class="bi bi-trash text-white" style="font-size: 1rem"></i>
+              </span>
+            </div>
           </div>
-          <div>
-            <span (click)="edit(dato)" role="button" class="mb-2">
-              <i class="bi bi-pencil" style="font-size: 1rem"></i>
-            </span>
-            <span (click)="delete(dato)" role="button" class="">
-              <i class="bi bi-trash" style="font-size: 1rem"></i>
-            </span>
-          </div>
-
-          <!-- <p>{{ even }}</p> -->
         </div>
       </span>
     </div>
