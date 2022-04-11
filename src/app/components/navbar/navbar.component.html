@@ -1,11 +1,11 @@
 <nav
-  class="fixed top-0 flex items-center justify-between w-screen text-lg text-gray-700">
+  class="fixed left-0 bottom-0 md:fixed md:top-0 md:max-h-fit | flex items-center justify-between w-screen | bg-white/5 backdrop-blur-sm | px-2 py-2 md:px-12 lg:px-24">
   <div class="flex gap-3">
     <a href="/home" routerLink="home">
-      <img alt="" class="h-5" src="../../../assets/images/logo.png"/>
+      <img alt="" class="h-5" src="../../../assets/images/logo.png" />
     </a>
     <a href="#">
-      <img alt="" class="h-5" src="../../../assets/images/APLogo-20-20.png"/>
+      <img alt="" class="h-5" src="../../../assets/images/APLogo-20-20.png" />
     </a>
   </div>
 
@@ -20,7 +20,13 @@
     <button mat-menu-item>Experience</button>
     <button mat-menu-item>Education</button>
     <button mat-menu-item>Skills</button>
-    <button class="text-[#e96269]" mat-menu-item>Login</button>
+    <a
+      mat-menu-item
+      class="block hover:text-[#e72f36] text-[#e96269]"
+      href="/login"
+      routerLink="login"
+      >Login</a
+    >
   </mat-menu>
 
   <div class="hidden md:flex md:items-center" id="menu">
@@ -32,9 +38,7 @@
         <a class="block hover:text-[#e96269]" href="#">Portfolio</a>
       </li>
       <li>
-        <a class="block hover:text-[#e96269]" href="#"
-        >Experience</a
-        >
+        <a class="block hover:text-[#e96269]" href="#">Experience</a>
       </li>
       <li>
         <a class="block hover:text-[#e96269]" href="#">Education</a>
@@ -47,7 +51,7 @@
           class="block hover:text-[#e72f36] text-[#e96269]"
           href="/login"
           routerLink="login"
-        >Login</a
+          >Login</a
         >
       </li>
     </ul>

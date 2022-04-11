@@ -9,7 +9,6 @@
     </span>
   </div>
 
-
   <swiper [config]="swiperConfig" class="h-[400px] sm:h-[250px]">
     <ng-template
       *ngFor="let portfolio of prueba; let myIndex = index"
@@ -21,7 +20,7 @@
           <img
             alt=""
             class="h-auto rounded-2xl max-w-[265px] md:max-w-[320px]"
-            src="{{ portfolio.img }}"/>
+            src="{{ portfolio.img }}" />
         </figure>
 
         <div
@@ -49,8 +48,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </ng-template>
   </swiper>

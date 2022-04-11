@@ -1,26 +1,24 @@
 <article
-  class="min-h-fit mb-16 sm:min-h-screen pt-16 px-4 sm:grid sm:grid-cols-2 sm:grid-rows-1 sm:px-14">
-
+  class="min-h-fit mb-16 sm:min-h-screen sm:grid sm:grid-cols-2 px-2 md:px-12 lg:px-24">
   <div class="mt-4 gap-6 sm:mt-32 flex flex-col">
     <h1 class="text-left text-3xl">
       Hello! i'm <span>{{ textoInfoPersonal[0].nombreyapellido }}</span
-    >.<br/>👋
+      >.<br />👋
     </h1>
 
-    <p class="text-xl text-left">
+    <p class="text-xl text-justify leading-10">
       A multidisciplinary <span>{{ textoInfoPersonal[0].puesto }}</span> and
       <span>designer </span> <span class="cursive">(sometimes)</span> from
       <span>{{ textoInfoPersonal[0].ubicacion }}</span> with a passion for
-      creating engaging, entertaining user experiences.<br/>✨
+      creating engaging, entertaining user experiences.<br />✨
     </p>
   </div>
 
-
-  <div class="flex justify-center mt-4 sm:mt-32 md:justify-end md:pr-24">
+  <div class="flex justify-center mt-4 sm:mt-32">
     <img
       alt=""
-      class="w-48 h-48 rounded-full shadow-xl"
-      src="../../../assets/images/avatar.png"/>
+      class="w-56 h-56 rounded-full shadow-xl"
+      src="../../../assets/images/avatar.png" />
     <span
       (click)="openDialog()"
       *ngIf="isLoggedIn"
@@ -29,6 +27,4 @@
       <i class="fa-solid fa-plus text-white text-center"></i>
     </span>
   </div>
-
 </article>
-
