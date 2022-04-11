@@ -1,7 +1,7 @@
 <div class="min-h-screen mx-4">
   <h2 class="text-2xl text-center">Skills</h2>
 
-  <span (click)="openDialog()" role="button" class="float-end overflow-hidden">
+  <span (click)="openDialog()" class="float-end overflow-hidden" role="button">
     <i class="bi bi-plus-circle"></i>
   </span>
 
@@ -10,26 +10,26 @@
       <div>
         <h5 class="text-center">{{ prueba.titulo }}</h5>
         <mat-progress-spinner
-          [value]="prueba.value"
           [color]="prueba.color"
+          [value]="prueba.value"
           aria-label="Rating">
         </mat-progress-spinner>
-        <div style="position: relative; top: -60px; left: 35px">
+        <span style="position: relative; top: -60px; left: 35px">
           {{ prueba.value }}%
-        </div>
+        </span>
         <div class="d-flex justify-content-between">
           <span
-            *ngIf="isLoggedIn"
             (click)="edit(prueba)"
-            role="button"
-            class="mb-2">
+            *ngIf="isLoggedIn"
+            class="mb-2"
+            role="button">
             <i class="bi bi-pencil" style="font-size: 1rem"></i>
           </span>
           <span
-            *ngIf="isLoggedIn"
             (click)="delete(prueba)"
-            role="button"
-            class="mb-2">
+            *ngIf="isLoggedIn"
+            class="mb-2"
+            role="button">
             <i class="bi bi-trash" style="font-size: 1rem"></i>
           </span>
         </div>
