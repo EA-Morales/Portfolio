@@ -1,18 +1,20 @@
-<main class="min-h-screen w-full">
+<main class="min-h-screen w-full mb-10">
   <h2 class="text-2xl text-center mb-4">About me</h2>
 
   <div
-    class="about__container grid grid-cols-1 mx-4 gap-6 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl">
+    class="about__container flex flex-col px-2 gap-8 md:flex-row md:px-12 lg:px-24">
     <img
-      class="w-[200px] sm:w-[350px] h-auto rounded-2xl mx-auto object-cover"
+      class="w-[200px] sm:w-[300px] h-auto rounded-xl mx-auto object-cover"
       src="../../../assets/images/aboutme.jpg"
       alt="" />
-    <div class="about__descripcion flex flex-col justify-center">
-      <p class="mb-4">
+    <div
+      class="about__descripcion flex flex-col justify-center text-justify gap-8">
+      <p class="">
         {{ texto[0].texto }}
       </p>
 
-      <div class="about__info flex gap-2 justify-center mb-4">
+      <!-- PROYECTOS INFO -->
+      <div class="about__info flex justify-center items-center gap-8">
         <div class="text-center">
           <span class="about__info-title text-[#e96269] font-bold text-xl"
             >2 +<br
@@ -33,7 +35,7 @@
         </div>
       </div>
 
-      <div class="flex justify-between items-center">
+      <div class="flex justify-center relative">
         <button
           class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white max-w-fit">
           Donwload CV <i class="fa-solid fa-download"></i>
@@ -42,7 +44,7 @@
         <span
           (click)="openDialog()"
           role="button"
-          class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center">
+          class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center self-center absolute right-0">
           <i class="bi bi-pencil text-white" style="font-size: 1rem"></i>
         </span>
       </div>
