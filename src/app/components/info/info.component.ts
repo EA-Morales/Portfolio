@@ -14,6 +14,5 @@ export class InfoComponent implements OnInit {
 
   show() {
     this.mostrar = !this.mostrar;
-    console.log(this.mostrar);
   }
 }

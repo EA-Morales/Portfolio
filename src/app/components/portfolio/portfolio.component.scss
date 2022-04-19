@@ -4,8 +4,12 @@
 
 @import '../../../styles/variables';
 
-swiper {
+.swiper {
   width: 90%;
+}
+
+.swiper-pagination {
+  margin-top: 15px;
 }
 
 .swiper-pagination-bullet {
@@ -42,7 +46,6 @@ swiper {
 h2 {
   font-family: $poppins;
   font-weight: 600;
-  color: $primary-color;
 }
 
 p {
@@ -57,9 +60,4 @@ button {
 
 figure {
   overflow: initial;
-}
-
-.badge {
-  background-color: $primary-color;
-  border: none;
 }

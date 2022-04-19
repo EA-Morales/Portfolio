@@ -39,7 +39,6 @@ export class PortfolioComponent implements OnInit {
 
   // SWIPER CONFIG
   public swiperConfig: SwiperOptions = {
-    height: 300,
     pagination: true,
     spaceBetween: 15,
     centeredSlides: true,

@@ -1,11 +1,11 @@
-@import '/src/styles/variables';
+@import '/src/styles/_variables';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: $karla-font;
+  font-family: $poppins;
   font-size: 16px;
 }
 
@@ -13,7 +13,20 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: $karla-font, 'Helvetica Neue', sans-serif;
+  color: $secondary-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $global-color;
+}
+
+h2 {
+  font-size: $h1-font-size;
 }
