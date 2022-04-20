@@ -1,39 +1,43 @@
-<div class="min-h-screen mx-4">
-  <h2 class="text-2xl text-center">Skills</h2>
+<div class="min-h-fit lg:pt-32 lg:px-72">
+  <div class="relative flex justify-center mb-20">
+    <h2 class="text-4xl font-medium text-center">Skills</h2>
+    <span
+      *ngIf="isLoggedIn"
+      (click)="openDialog()"
+      class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center absolute right-4"
+      role="button">
+      <i class="fa-solid fa-plus text-white text-center"></i>
+    </span>
+  </div>
 
-  <span (click)="openDialog()" class="float-end overflow-hidden" role="button">
-    <i class="bi bi-plus-circle"></i>
-  </span>
-
-  <li *ngFor="let prueba of pruebas">
-    <div class="col d-flex justify-content-center">
-      <div>
-        <h5 class="text-center">{{ prueba.titulo }}</h5>
-        <mat-progress-spinner
-          [color]="prueba.color"
-          [value]="prueba.value"
-          aria-label="Rating">
-        </mat-progress-spinner>
-        <span style="position: relative; top: -60px; left: 35px">
-          {{ prueba.value }}%
+  <div *ngFor="let prueba of pruebas">
+    <div class="bg-orange-200 m-4">
+      <h5 class="text-center bg-slate-400">{{ prueba.titulo }}</h5>
+      <mat-progress-spinner
+        class="bg-green-200"
+        [color]="prueba.color"
+        [value]="prueba.value"
+        aria-label="Rating">
+      </mat-progress-spinner>
+      <span style="position: relative; top: -60px; left: 35px">
+        {{ prueba.value }}%
+      </span>
+      <div class="">
+        <span
+          (click)="edit(prueba)"
+          *ngIf="isLoggedIn"
+          class="mb-2"
+          role="button">
+          <i class="bi bi-pencil" style="font-size: 1rem"></i>
         </span>
-        <div class="d-flex justify-content-between">
-          <span
-            (click)="edit(prueba)"
-            *ngIf="isLoggedIn"
-            class="mb-2"
-            role="button">
-            <i class="bi bi-pencil" style="font-size: 1rem"></i>
-          </span>
-          <span
-            (click)="delete(prueba)"
-            *ngIf="isLoggedIn"
-            class="mb-2"
-            role="button">
-            <i class="bi bi-trash" style="font-size: 1rem"></i>
-          </span>
-        </div>
+        <span
+          (click)="delete(prueba)"
+          *ngIf="isLoggedIn"
+          class="mb-2"
+          role="button">
+          <i class="bi bi-trash" style="font-size: 1rem"></i>
+        </span>
       </div>
     </div>
-  </li>
+  </div>
 </div>

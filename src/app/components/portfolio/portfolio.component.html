@@ -1,6 +1,6 @@
-<section class="w-full mb-12 sm:mb-28">
-  <div class="relative flex justify-center">
-    <h2 class="text-2xl mb-4 col-span-11 mx-auto">Portfolio</h2>
+<section class="w-full mb-12 sm:mb-28 pt-12 lg:pt-24">
+  <div class="relative flex justify-center mb-20">
+    <h2 class="text-4xl font-medium text-center">Portfolio</h2>
     <span
       *ngIf="isLoggedIn"
       (click)="openDialog()"
@@ -10,7 +10,7 @@
     </span>
   </div>
 
-  <swiper [config]="swiperConfig" class="h-[400px] sm:h-[250px]">
+  <swiper [config]="swiperConfig" class="h-[400px] sm:h-[300px]">
     <ng-template
       *ngFor="let portfolio of prueba; let myIndex = index"
       class="h-full"

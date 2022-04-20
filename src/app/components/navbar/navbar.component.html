@@ -1,59 +1,61 @@
-<nav
-  class="fixed max-h-fit left-0 bottom-0 md:fixed md:top-0 md:max-h-fit | flex items-center justify-between w-screen | bg-white/5 backdrop-blur-sm | px-2 py-2 md:px-12 lg:px-24">
-  <div class="flex gap-3">
-    <a href="/home" routerLink="home">
-      <img alt="" class="h-5" src="../../../assets/images/logo.png" />
-    </a>
-    <a href="#">
-      <img alt="" class="h-5" src="../../../assets/images/APLogo-20-20.png" />
-    </a>
-  </div>
+<div class="fixed max-h-fit left-0 bottom-0 md:fixed md:top-0 md:max-h-fit">
+  <nav
+    class="flex items-center justify-between w-screen | bg-white/5 backdrop-blur-sm | px-2 py-2 md:px-12 lg:px-24">
+    <div class="flex gap-3">
+      <a href="/home" routerLink="home">
+        <img alt="" class="h-5" src="../../../assets/images/logo.png" />
+      </a>
+      <a href="#">
+        <img alt="" class="h-5" src="../../../assets/images/APLogo-20-20.png" />
+      </a>
+    </div>
 
-  <i
-    [matMenuTriggerFor]="menu"
-    class="fa-solid fa-bars text-[#e96269] h-6 w-6 cursor-pointer md:hidden block"
-    id="menu-button"></i>
+    <i
+      [matMenuTriggerFor]="menu"
+      class="fa-solid fa-bars text-[#e96269] h-6 w-6 cursor-pointer md:hidden block"
+      id="menu-button"></i>
 
-  <mat-menu #menu="matMenu">
-    <button class="hover:bg-[#e96269]" mat-menu-item>About Me</button>
-    <button mat-menu-item>Portfolio</button>
-    <button mat-menu-item>Experience</button>
-    <button mat-menu-item>Education</button>
-    <button mat-menu-item>Skills</button>
-    <a
-      class="block hover:text-[#e72f36] text-[#e96269]"
-      href="/login"
-      mat-menu-item
-      routerLink="login"
-      >Login</a
-    >
-  </mat-menu>
+    <mat-menu #menu="matMenu">
+      <button class="hover:bg-[#e96269]" mat-menu-item>About Me</button>
+      <button mat-menu-item>Portfolio</button>
+      <button mat-menu-item>Experience</button>
+      <button mat-menu-item>Education</button>
+      <button mat-menu-item>Skills</button>
+      <a
+        class="block hover:text-[#e72f36] text-[#e96269]"
+        href="/login"
+        mat-menu-item
+        routerLink="login"
+        >Login</a
+      >
+    </mat-menu>
 
-  <div class="hidden md:flex md:items-center" id="menu">
-    <ul class="text-base text-gray-700 md:flex gap-4">
-      <li>
-        <a class="block hover:text-[#e96269]" href="#">About Me</a>
-      </li>
-      <li>
-        <a class="block hover:text-[#e96269]" href="#">Portfolio</a>
-      </li>
-      <li>
-        <a class="block hover:text-[#e96269]" href="#">Experience</a>
-      </li>
-      <li>
-        <a class="block hover:text-[#e96269]" href="#">Education</a>
-      </li>
-      <li>
-        <a class="block hover:text-[#e96269]" href="#">Skills</a>
-      </li>
-      <li>
-        <a
-          class="block hover:text-[#e72f36] text-[#e96269]"
-          href="/login"
-          routerLink="login"
-          >Login</a
-        >
-      </li>
-    </ul>
-  </div>
-</nav>
+    <div class="hidden md:flex md:items-center" id="menu">
+      <ul class="text-base text-gray-700 md:flex gap-4">
+        <li>
+          <a class="block hover:text-[#e96269]" href="#">About Me</a>
+        </li>
+        <li>
+          <a class="block hover:text-[#e96269]" href="#">Portfolio</a>
+        </li>
+        <li>
+          <a class="block hover:text-[#e96269]" href="#">Experience</a>
+        </li>
+        <li>
+          <a class="block hover:text-[#e96269]" href="#">Education</a>
+        </li>
+        <li>
+          <a class="block hover:text-[#e96269]" href="#">Skills</a>
+        </li>
+        <li>
+          <a
+            class="block hover:text-[#e72f36] text-[#e96269]"
+            href="/login"
+            routerLink="login"
+            >Login</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
