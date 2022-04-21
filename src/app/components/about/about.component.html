@@ -1,15 +1,15 @@
-<main class="w-full pt-10 pb-8 lg:pt-32 lg:px-72">
-  <h2 class="text-4xl font-medium text-center mb-16">About me</h2>
+<main class="w-full px-6 pt-10 pb-8 lg:pt-32 lg:px-52">
+  <h2 class="text-2xl sm:text-4xl font-medium text-center mb-12">About me</h2>
 
   <div
-    class="about__container flex flex-col px-2 gap-8 items-center md:flex-row md:justify-center">
+    class="about__container flex flex-col px-2 gap-6 sm:gap-20 items-center md:flex-row md:justify-center">
     <img
-      class="max-h-[300px] max-w-[272px] rounded-xl object-cover"
+      class="max-h-[200px] lg:max-h-[272px] rounded-xl object-cover"
       src="../../../assets/images/aboutme.jpg"
       alt="" />
     <div
       class="about__descripcion flex flex-col justify-center text-justify gap-8">
-      <p class="">
+      <p class="text-base">
         {{ texto[0].texto }}
       </p>
 
@@ -19,7 +19,7 @@
           <span class="about__info-title text-[#e96269] font-bold text-xl"
             >2 +<br
           /></span>
-          <p class="about__info-name">
+          <p class="about__info-name text-xs">
             Años<br />
             Experiencia
           </p>
@@ -28,24 +28,23 @@
           <span class="about__info-title text-[#e96269] font-bold text-xl"
             >4 + <br
           /></span>
-          <p class="about__info-name">
+          <p class="about__info-name text-xs">
             Proyectos <br />
             Completados
           </p>
         </div>
       </div>
 
-      <div class="flex justify-center relative">
+      <div class="flex justify-between">
         <button
           class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-lg text-white max-w-fit">
           Donwload CV <i class="fa-solid fa-download"></i>
         </button>
 
         <span
-          *ngIf="isLoggedIn"
           (click)="openDialog()"
           role="button"
-          class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center self-center absolute right-0">
+          class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center self-center">
           <i class="bi bi-pencil text-white" style="font-size: 1rem"></i>
         </span>
       </div>

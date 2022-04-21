@@ -16,6 +16,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
 
 // Components of my webpage
 import { NavbarComponent } from './navbar/navbar.component';
@@ -28,6 +29,7 @@ import { InfoComponent } from './info/info.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
+import { FooterComponent } from './footer/footer.component';
 import { ModalPortfolioComponent } from './portfolio/modal-portfolio/modal-portfolio.component';
 import { ModalAboutComponent } from './about/modal-about/modal-about.component';
 import { ModalHeaderComponent } from './header/modal-header/modal-header.component';
@@ -56,6 +58,7 @@ import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.compone
     ModalExperienceComponent,
     SkillsComponent,
     ModalSkillsComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -71,6 +74,7 @@ import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.compone
     MatExpansionModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
   ],
   exports: [
     HeaderComponent,
@@ -88,6 +92,7 @@ import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.compone
     InfoComponent,
     ExperienceComponent,
     SkillsComponent,
+    FooterComponent,
   ],
 })
 export class ComponentsModule {}

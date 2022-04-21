@@ -1,10 +1,11 @@
-<section class="w-full mb-12 sm:mb-28 pt-12 lg:pt-24">
-  <div class="relative flex justify-center mb-20">
-    <h2 class="text-4xl font-medium text-center">Portfolio</h2>
+<section class="w-full px-6 mb-12 sm:mb-28 pt-12 lg:pt-24">
+  <div class="grid grid-cols-3 mb-12 sm:mb-16">
+    <h2 class="text-2xl sm:text-4xl font-medium text-center col-start-2">
+      Portfolio
+    </h2>
     <span
-      *ngIf="isLoggedIn"
       (click)="openDialog()"
-      class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center absolute right-4"
+      class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center place-self-center"
       role="button">
       <i class="fa-solid fa-plus text-white text-center"></i>
     </span>
@@ -16,7 +17,7 @@
       class="h-full"
       swiperSlide>
       <div
-        class="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl">
+        class="grid grid-cols-1 gap-6 sm:gap-20 sm:grid-cols-2 sm:mx-auto sm:max-w-2xl">
         <figure class="mx-auto lg:ml-auto">
           <img
             alt=""
@@ -26,7 +27,7 @@
 
         <div
           class="flex flex-col justify-center p-2 gap-2 md:basis-1/2 md:flex md:flex-col md:gap-4">
-          <h2 class="text-lg">{{ portfolio.titulo }}</h2>
+          <h2 class="text-lg sm:text-lg">{{ portfolio.titulo }}</h2>
           <p class="text-sm">{{ portfolio.descripcion }}</p>
           <div class="flex justify-between">
             <button

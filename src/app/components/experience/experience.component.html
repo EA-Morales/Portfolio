@@ -1,6 +1,5 @@
-<div class="mt-8 lg:mx-72">
+<div class="mt-8 lg:mx-52 relative">
   <span
-    *ngIf="isLoggedIn"
     (click)="openDialog()"
     class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center absolute right-4"
     role="button">
@@ -12,11 +11,13 @@
         <div *ngIf="even === true" class="flex justify-between">
           <div class="w-full">
             <div class="text-left flex flex-col gap-1">
-              <h2 class="text-xl font-bold">{{ dato.establecimiento }}</h2>
-              <p class="text-lg">{{ dato.especialidad }}</p>
+              <h2 class="text-[15px] sm:text-xl font-bold">
+                {{ dato.establecimiento }}
+              </h2>
+              <p class="text-[13px] sm:text-lg">{{ dato.especialidad }}</p>
               <div class="flex gap-2">
                 <i class="fa-solid fa-calendar-days"></i>
-                <p class="text-sm">{{ dato.year }}</p>
+                <p class="text-[13px] sm:text-sm">{{ dato.year }}</p>
               </div>
               <div *ngIf="isLoggedIn" class="flex justify-between">
                 <span
@@ -47,11 +48,13 @@
         <div *ngIf="even === false" class="flex">
           <div class="w-full">
             <div class="text-right flex flex-col gap-1">
-              <h2 class="text-xl font-bold">{{ dato.establecimiento }}</h2>
-              <p class="text-lg">{{ dato.especialidad }}</p>
+              <h2 class="text-[15px] sm:text-xl font-bold">
+                {{ dato.establecimiento }}
+              </h2>
+              <p class="text-[13px] sm:text-lg">{{ dato.especialidad }}</p>
               <div class="flex flex-row-reverse gap-2">
                 <i class="fa-solid fa-calendar-days"></i>
-                <p class="text-sm">{{ dato.year }}</p>
+                <p class="text-[13px] sm:text-sm">{{ dato.year }}</p>
               </div>
               <div *ngIf="isLoggedIn" class="flex justify-between">
                 <span
