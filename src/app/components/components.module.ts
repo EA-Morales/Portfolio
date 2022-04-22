@@ -29,16 +29,17 @@ import { InfoComponent } from './info/info.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModalPortfolioComponent } from './portfolio/modal-portfolio/modal-portfolio.component';
 import { ModalAboutComponent } from './about/modal-about/modal-about.component';
 import { ModalHeaderComponent } from './header/modal-header/modal-header.component';
 import { ModalEducationComponent } from './education/modal-education/modal-education.component';
 import { ModalExperienceComponent } from './experience/modal-experience/modal-experience.component';
+import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.component';
 
 // Swiper for JS
 import { SwiperModule } from 'swiper/angular';
-import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.compone
     SkillsComponent,
     ModalSkillsComponent,
     FooterComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,
@@ -92,6 +94,7 @@ import { ModalSkillsComponent } from './skills/modal-skills/modal-skills.compone
     InfoComponent,
     ExperienceComponent,
     SkillsComponent,
+    ContactComponent,
     FooterComponent,
   ],
 })
