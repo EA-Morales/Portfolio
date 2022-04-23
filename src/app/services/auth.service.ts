@@ -13,7 +13,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiURL = 'http://localhost:8080/login';
+  private apiURL = 'https://fathomless-springs-67646.herokuapp.com/';
 
   currentUserSubject: BehaviorSubject<any>;
 

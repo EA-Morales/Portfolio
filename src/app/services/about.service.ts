@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AboutService {
-  private apiURL = 'http://localhost:8080/';
+  private apiURL = 'https://fathomless-springs-67646.herokuapp.com/';
 
   constructor(private http: HttpClient) {}
 
