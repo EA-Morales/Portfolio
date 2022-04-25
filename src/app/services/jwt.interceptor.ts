@@ -20,7 +20,7 @@ export class JwtInterceptor implements HttpInterceptor {
     // you probably want to store it in localStorage or something
     //console.log(token);
     if (!token) {
-      console.log('estas logueado');
+      //console.log('estas logueado');
       return next.handle(req);
     }
 

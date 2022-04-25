@@ -37,7 +37,7 @@ export class EducationComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isUserLoggedIn.subscribe(res => {
       this.isLoggedIn = res;
-      console.log(res);
+      //console.log(res);
     });
     this.getEducacion();
   }
@@ -77,6 +77,6 @@ export class EducationComponent implements OnInit {
       this.ngOnInit();
     });
 
-    console.log(this.prueba);
+    //console.log(this.prueba);
   }
 }

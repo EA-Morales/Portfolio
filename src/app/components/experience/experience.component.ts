@@ -36,7 +36,7 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isUserLoggedIn.subscribe(res => {
       this.isLoggedIn = res;
-      console.log(res);
+      //console.log(res);
     });
     this.getExperiencia();
   }
@@ -53,14 +53,14 @@ export class ExperienceComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log('se cerro el modal');
+      //console.log('se cerro el modal');
       this.ngOnInit();
       this.cdr.detectChanges();
     });
   }
 
   delete(dato: datos) {
-    console.log(dato.id);
+    //console.log(dato.id);
     this._dataSvc.deleteExperiencia(dato.id).subscribe(result => {
       this.ngOnInit();
     });

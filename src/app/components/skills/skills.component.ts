@@ -43,10 +43,10 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isUserLoggedIn.subscribe(res => {
       this.isLoggedIn = res;
-      console.log(res);
+      //console.log(res);
     });
     this.getSkills();
-    console.log('se recargo la vista!');
+    //console.log('se recargo la vista!');
   }
 
   getSkills(): any {

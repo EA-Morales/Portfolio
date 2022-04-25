@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   onSubmitLogin() {
     this.authService.login(this.loginForm.value).subscribe(
       res => {
-        console.log('te lugueaste exitosamente');
+        //console.log('te lugueaste exitosamente');
         this.route.navigate(['/home']);
       },
       err => {

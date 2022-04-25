@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+// Environment const
+import { environment } from 'src/environments/environment';
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };
@@ -11,7 +14,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AboutService {
-  private apiURL = 'https://fathomless-springs-67646.herokuapp.com/';
+  private apiURL = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

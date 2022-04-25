@@ -9,11 +9,14 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 import { map } from 'rxjs';
 
+// Environment const
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiURL = 'https://fathomless-springs-67646.herokuapp.com/login';
+  private apiURL = environment.apiUrl;
 
   currentUserSubject: BehaviorSubject<any>;
 
@@ -22,7 +25,7 @@ export class AuthService {
   );
 
   constructor(private http: HttpClient, private router: Router) {
-    console.log('El servicio esta corriendo');
+    //console.log('El servicio esta corriendo');
     this.currentUserSubject = new BehaviorSubject<any>(
       JSON.parse(sessionStorage.getItem('currentuser') || '{}')
     );
@@ -42,27 +45,29 @@ export class AuthService {
       }),
     };
 
-    return this.http.post(this.apiURL, params.toString(), httpOptions).pipe(
-      catchError(this.handleError),
-      map(userData => {
-        //sessionStorage.setItem('token', JSON.stringify(userData));
-        let tokenStr = JSON.stringify(userData);
-        //console.log(tokenStr.substring(10, tokenStr.length - 2));
-        sessionStorage.setItem('token', tokenStr);
-        this.loggedIn.next(true);
-        return userData;
-      })
-    );
+    return this.http
+      .post(`${this.apiURL}login`, params.toString(), httpOptions)
+      .pipe(
+        catchError(this.handleError),
+        map(userData => {
+          //sessionStorage.setItem('token', JSON.stringify(userData));
+          let tokenStr = JSON.stringify(userData);
+          //console.log(tokenStr.substring(10, tokenStr.length - 2));
+          sessionStorage.setItem('token', tokenStr);
+          this.loggedIn.next(true);
+          return userData;
+        })
+      );
   }
 
   get isUserLoggedIn() {
     return this.loggedIn.asObservable();
   }
 
-  logout() {
-    this.loggedIn.next(false);
-    sessionStorage.removeItem('token');
-  }
+  // logout() {
+  //   this.loggedIn.next(false);
+  //   sessionStorage.removeItem('token');
+  // }
 
   private handleError(httpError: HttpErrorResponse) {
     let message: string = '';
