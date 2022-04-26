@@ -61,13 +61,19 @@ export class AuthService {
   }
 
   get isUserLoggedIn() {
-    return this.loggedIn.asObservable();
+    if (sessionStorage.getItem('token') === null) {
+      this.loggedIn.next(false);
+      return this.loggedIn.asObservable();
+    } else {
+      this.loggedIn.next(true);
+      return this.loggedIn.asObservable();
+    }
   }
 
-  // logout() {
-  //   this.loggedIn.next(false);
-  //   sessionStorage.removeItem('token');
-  // }
+  logout() {
+    this.loggedIn.next(false);
+    sessionStorage.removeItem('token');
+  }
 
   private handleError(httpError: HttpErrorResponse) {
     let message: string = '';
@@ -97,10 +103,6 @@ export class AuthService {
       localStorage.setItem('auth_token', resp.token);
     });
 } */
-
-// login(login: any) {
-//   console.log(login);
-// }
 
 // public get logIn(): boolean {
 //   return localStorage.getItem('token') !== null;

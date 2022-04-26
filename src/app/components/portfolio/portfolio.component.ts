@@ -56,7 +56,6 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isUserLoggedIn.subscribe(res => {
       this.isLoggedIn = res;
-      //console.log(res);
     });
     this.getProyects();
 

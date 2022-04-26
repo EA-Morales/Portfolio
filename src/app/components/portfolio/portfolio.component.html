@@ -4,6 +4,7 @@
       Portfolio
     </h2>
     <span
+      *ngIf="isLoggedIn"
       (click)="openDialog()"
       class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center place-self-center"
       role="button">

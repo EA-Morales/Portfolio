@@ -22,11 +22,20 @@
       <button mat-menu-item>Education</button>
       <button mat-menu-item>Skills</button>
       <a
+        *ngIf="isLoggedIn === false"
         class="block hover:text-[#e72f36] text-[#e96269]"
         href="/login"
         mat-menu-item
         routerLink="login"
         >Login</a
+      >
+      <a
+        *ngIf="isLoggedIn === true"
+        (click)="logout()"
+        class="block hover:text-[#e72f36] text-[#e96269]"
+        href="#"
+        mat-menu-item
+        >Logout</a
       >
     </mat-menu>
 
@@ -49,10 +58,18 @@
         </li>
         <li>
           <a
+            *ngIf="isLoggedIn === false"
             class="block hover:text-[#e72f36] text-[#e96269]"
             href="/login"
             routerLink="login"
             >Login</a
+          >
+          <a
+            *ngIf="isLoggedIn === true"
+            (click)="logout()"
+            class="block hover:text-[#e72f36] text-[#e96269]"
+            href="#"
+            >Logout</a
           >
         </li>
       </ul>

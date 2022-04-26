@@ -1,5 +1,6 @@
 <div class="mt-8 lg:mx-52 relative">
   <span
+    *ngIf="isLoggedIn"
     (click)="openDialog()"
     class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center absolute right-4"
     role="button">

@@ -4,6 +4,7 @@
       Skills
     </h2>
     <span
+      *ngIf="isLoggedIn"
       (click)="openDialog()"
       class="bg-[#e96269] hover:bg-[#e72f36] p-2 rounded-full h-6 w-6 flex justify-center items-center place-self-center"
       role="button">
@@ -24,7 +25,7 @@
         <span style="position: relative; top: -60px; left: 35px">
           {{ prueba.value }}%
         </span>
-        <div class="flex justify-between">
+        <div *ngIf="isLoggedIn" class="flex justify-between">
           <span (click)="edit(prueba)" class="mb-2" role="button">
             <i class="bi bi-pencil" style="font-size: 1rem"></i>
           </span>

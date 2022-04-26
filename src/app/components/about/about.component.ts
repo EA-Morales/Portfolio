@@ -33,7 +33,6 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isUserLoggedIn.subscribe(res => {
       this.isLoggedIn = res;
-      //console.log(res);
     });
     this._dataSvc
       .getTextAbout()
