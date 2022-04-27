@@ -2,7 +2,7 @@
   <nav
     class="flex items-center justify-between w-screen | bg-white/5 backdrop-blur-sm | px-2 py-2 md:px-12 lg:px-24">
     <div class="flex gap-3">
-      <a href="/home" routerLink="home">
+      <a href="/home" routerLink="home" (click)="toBanner()">
         <img alt="" class="h-5" src="../../../assets/images/logo.png" />
       </a>
       <a href="#">
@@ -42,19 +42,30 @@
     <div class="hidden md:flex md:items-center" id="menu">
       <ul class="text-base text-gray-700 md:flex gap-4">
         <li>
-          <a class="block hover:text-[#e96269]" href="About">About Me</a>
+          <a
+            class="block hover:text-[#e96269]"
+            (click)="toAbout()"
+            routerLinkActive="about"
+            >About Me</a
+          >
         </li>
         <li>
-          <a class="block hover:text-[#e96269]" href="#">Portfolio</a>
+          <a class="block hover:text-[#e96269]" (click)="toPortfolio()"
+            >Portfolio</a
+          >
         </li>
         <li>
-          <a class="block hover:text-[#e96269]" href="#">Experience</a>
+          <a class="block hover:text-[#e96269]" (click)="toInfo()"
+            >Informacion</a
+          >
         </li>
         <li>
-          <a class="block hover:text-[#e96269]" href="#">Education</a>
+          <a class="block hover:text-[#e96269]" (click)="toSkills()">Skills</a>
         </li>
         <li>
-          <a class="block hover:text-[#e96269]" href="#">Skills</a>
+          <a class="block hover:text-[#e96269]" (click)="toContact()"
+            >Contacto</a
+          >
         </li>
         <li>
           <a
