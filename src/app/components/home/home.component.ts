@@ -30,12 +30,12 @@ export class HomeComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit(): void {
-    this.bannerOffset = this.bannerElement.nativeElement;
-    this.aboutOffset = this.aboutElement.nativeElement;
-    this.portfolioOffset = this.portfolioElement.nativeElement;
-    this.infoOffset = this.infoElement.nativeElement;
-    this.skillsOffset = this.skillsElement.nativeElement;
-    this.contactOffset = this.contactElement.nativeElement;
+    this.bannerOffset = this.bannerElement.nativeElement.offsetTop;
+    this.aboutOffset = this.aboutElement.nativeElement.offsetTop;
+    this.portfolioOffset = this.portfolioElement.nativeElement.offsetTop;
+    this.infoOffset = this.infoElement.nativeElement.offsetTop;
+    this.skillsOffset = this.skillsElement.nativeElement.offsetTop;
+    this.contactOffset = this.contactElement.nativeElement.offsetTop;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -43,12 +43,12 @@ export class HomeComponent implements AfterViewInit {
     console.log(window.scrollY);
     if (
       window.scrollY >= this.bannerOffset &&
-      window.scrollY < this.bannerOffset.offsetHeight
+      window.scrollY < this.aboutOffset
     ) {
       console.log('ESTAS EN BANNER');
       this.currentActive = 1;
     } else if (
-      window.scrollY + 300 >= this.aboutOffset &&
+      window.scrollY >= this.aboutOffset &&
       window.scrollY < this.portfolioOffset
     ) {
       console.log('ESTAS EN ABOUT');
