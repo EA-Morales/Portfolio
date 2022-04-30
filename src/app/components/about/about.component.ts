@@ -47,6 +47,7 @@ export class AboutComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalAboutComponent, {
+      width: '25vw',
       data: 'componente about',
     });
 

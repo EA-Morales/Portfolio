@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
 
@@ -27,55 +28,48 @@ export class HomeComponent implements AfterViewInit {
   public skillsOffset!: Number;
   public contactOffset!: Number;
 
-  constructor() {}
+  constructor(element: ElementRef, renderer: Renderer2) {}
 
-  ngAfterViewInit(): void {
-    this.bannerOffset = this.bannerElement.nativeElement.offsetTop;
-    this.aboutOffset = this.aboutElement.nativeElement.offsetTop;
-    this.portfolioOffset = this.portfolioElement.nativeElement.offsetTop;
-    this.infoOffset = this.infoElement.nativeElement.offsetTop;
-    this.skillsOffset = this.skillsElement.nativeElement.offsetTop;
-    this.contactOffset = this.contactElement.nativeElement.offsetTop;
-  }
+  ngAfterViewInit(): void {}
 
-  @HostListener('window:scroll', ['$event'])
-  checkOffsetTop() {
-    console.log(window.scrollY);
-    if (
-      window.scrollY >= this.bannerOffset &&
-      window.scrollY < this.aboutOffset
-    ) {
-      console.log('ESTAS EN BANNER');
-      this.currentActive = 1;
-    } else if (
-      window.scrollY >= this.aboutOffset &&
-      window.scrollY < this.portfolioOffset
-    ) {
-      console.log('ESTAS EN ABOUT');
-      this.currentActive = 2;
-    } else if (
-      window.scrollY >= this.portfolioOffset &&
-      window.scrollY < this.infoOffset
-    ) {
-      console.log('ESTAS EN PORTFOLIO');
-      this.currentActive = 3;
-    } else if (
-      window.scrollY >= this.infoOffset &&
-      window.scrollY < this.skillsOffset
-    ) {
-      console.log('ESTAS EN INFO');
-      this.currentActive = 4;
-    } else if (
-      window.scrollY >= this.skillsOffset &&
-      window.scrollY < this.contactOffset
-    ) {
-      console.log('ESTAS EN SKILLS');
-      this.currentActive = 5;
-    } else if (window.scrollY >= this.contactOffset) {
-      console.log('ESTAS EN CONTACT');
-      this.currentActive = 6;
-    } else {
-      this.currentActive = 0;
-    }
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // checkOffsetTop() {
+  //   console.log(window.scrollY);
+  //   if (
+  //     window.scrollY >= this.bannerOffset &&
+  //     window.scrollY < this.aboutOffset
+  //   ) {
+  //     console.log('ESTAS EN BANNER');
+  //     this.currentActive = 1;
+  //   } else if (
+  //     window.scrollY >= this.aboutOffset &&
+  //     window.scrollY < this.portfolioOffset
+  //   ) {
+  //     console.log('ESTAS EN ABOUT');
+  //     this.currentActive = 2;
+  //   } else if (
+  //     window.scrollY >= this.portfolioOffset &&
+  //     window.scrollY < this.infoOffset
+  //   ) {
+  //     console.log('ESTAS EN PORTFOLIO');
+  //     this.currentActive = 3;
+  //   } else if (
+  //     window.scrollY >= this.infoOffset &&
+  //     window.scrollY < this.skillsOffset
+  //   ) {
+  //     console.log('ESTAS EN INFO');
+  //     this.currentActive = 4;
+  //   } else if (
+  //     window.scrollY >= this.skillsOffset &&
+  //     window.scrollY < this.contactOffset
+  //   ) {
+  //     console.log('ESTAS EN SKILLS');
+  //     this.currentActive = 5;
+  //   } else if (window.scrollY >= this.contactOffset) {
+  //     console.log('ESTAS EN CONTACT');
+  //     this.currentActive = 6;
+  //   } else {
+  //     this.currentActive = 0;
+  //   }
+  // }
 }
