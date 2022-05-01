@@ -48,6 +48,8 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalHeaderComponent, {
+      height: '85vh',
+
       data: 'datos personales',
     });
 
