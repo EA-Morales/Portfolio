@@ -7,18 +7,17 @@
     class="datos-form">
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Imagen</mat-label>
-      <input [ngModel]="data.img" formControlName="img" matInput />
+      <input formControlName="img" matInput />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Titulo</mat-label>
-      <input [ngModel]="data.titulo" formControlName="titulo" matInput />
+      <input formControlName="titulo" matInput />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Descripcion</mat-label>
       <textarea
-        [ngModel]="data.descripcion"
         cols="30"
         formControlName="descripcion"
         matInput
@@ -27,12 +26,14 @@
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Link</mat-label>
-      <input [ngModel]="data.link" formControlName="link" matInput />
+      <input formControlName="link" matInput />
     </mat-form-field>
 
-    <mat-dialog-actions class="float-end">
-      <button mat-dialog-close mat-raised-button type="submit">Enviar</button>
+    <mat-dialog-actions class="flex justify-between">
       <button mat-dialog-close mat-raised-button>Close</button>
+      <button mat-dialog-close mat-raised-button color="accent" type="submit">
+        Enviar
+      </button>
     </mat-dialog-actions>
   </form>
 </mat-dialog-content>

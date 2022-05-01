@@ -30,6 +30,13 @@ export class ModalPortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     this.proyectsform = this.initProyectsForm();
+
+    this.proyectsform.patchValue({
+      img: this.data.img,
+      titulo: this.data.titulo,
+      descripcion: this.data.descripcion,
+      link: this.data.link,
+    });
     console.log(this.data);
   }
 

@@ -70,6 +70,7 @@ export class PortfolioComponent implements OnInit {
 
   edit(proyect: proyects) {
     let dialogRef = this.dialog.open(ModalPortfolioComponent, {
+      width: '35vw',
       data: proyect,
     });
 
@@ -87,10 +88,12 @@ export class PortfolioComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalPortfolioComponent, {
+      width: '35vw',
       data: this.prueba,
     });
 
     dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
       this.ngOnInit();
     });
   }
