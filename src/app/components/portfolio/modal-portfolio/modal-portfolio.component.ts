@@ -37,7 +37,6 @@ export class ModalPortfolioComponent implements OnInit {
       descripcion: this.data.descripcion,
       link: this.data.link,
     });
-    console.log(this.data);
   }
 
   initProyectsForm(): FormGroup {
@@ -56,7 +55,6 @@ export class ModalPortfolioComponent implements OnInit {
         .editproyects(this.proyectsform.value, this.data.id)
         .subscribe();
     } else {
-      console.log(this.proyectsform.value);
       this._dataSvc.addproyects(this.proyectsform.value).subscribe();
     }
   }

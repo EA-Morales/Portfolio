@@ -2,6 +2,7 @@ import { BannerService } from './../../../services/banner.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { infoPersonal } from 'src/app/models/interfaceDatos';
 
 @Component({
   selector: 'app-modal-header',
@@ -13,7 +14,7 @@ export class ModalHeaderComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: any,
+    public data: infoPersonal,
     private readonly fb: FormBuilder,
     private _dataSvc: BannerService
   ) {}

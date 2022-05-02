@@ -99,7 +99,6 @@ export class PortfolioComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(res => {
-      console.log(res);
       this.ngOnInit();
     });
   }

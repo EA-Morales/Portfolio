@@ -20,7 +20,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   infoPersonalform!: FormGroup;
-  textoInfoPersonal!: infoPersonal[];
+
+  textoInfoPersonal: infoPersonal[] = [];
 
   isLoggedIn!: boolean;
 
@@ -46,13 +47,13 @@ export class HeaderComponent implements OnInit {
       );
   }
 
-  openDialog() {
+  openDialog(texto: infoPersonal) {
     let dialogRef = this.dialog.open(ModalHeaderComponent, {
       height: '80vh',
       maxWidth: '500px',
       minWidth: '200px',
       width: '80vw',
-      data: this.textoInfoPersonal,
+      data: texto,
     });
 
     dialogRef.afterClosed().subscribe(res => {
