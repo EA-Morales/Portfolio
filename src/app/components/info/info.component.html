@@ -1,15 +1,21 @@
 <div class="min-h-fit px-6">
   <h2 class="text-2xl sm:text-4xl font-medium text-center mb-4">Experiencia</h2>
   <div class="flex gap-4 justify-center mb-16">
-    <button (click)="show()" class="hover:text-[#e72f36] max-w-fit">
+    <button
+      (click)="showEducacion()"
+      [ngClass]="{ 'text-[#e72f36]': mostrarEducacion }"
+      class="hover:text-[#e72f36] max-w-fit">
       Educacion <i class="fa-solid fa-graduation-cap"></i>
     </button>
 
-    <button (click)="show()" class="hover:text-[#e72f36] max-w-fit">
+    <button
+      (click)="showExperiencia()"
+      [ngClass]="{ 'text-[#e72f36]': mostrarExperiencia }"
+      class="hover:text-[#e72f36] max-w-fit">
       Experiencia <i class="fa-solid fa-briefcase"></i>
     </button>
   </div>
 
-  <app-education *ngIf="mostrar === true"></app-education>
-  <app-experience *ngIf="mostrar === false"></app-experience>
+  <app-education *ngIf="mostrarEducacion"></app-education>
+  <app-experience *ngIf="mostrarExperiencia"></app-experience>
 </div>

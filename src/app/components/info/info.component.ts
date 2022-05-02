@@ -6,13 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info.component.scss'],
 })
 export class InfoComponent implements OnInit {
-  mostrar: boolean = true;
+  mostrarEducacion: boolean = true;
+  mostrarExperiencia: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  show() {
-    this.mostrar = !this.mostrar;
+  showEducacion() {
+    if (this.mostrarEducacion === false) {
+      this.mostrarEducacion = true;
+      this.mostrarExperiencia = false;
+    }
+  }
+
+  showExperiencia() {
+    if (this.mostrarExperiencia === false) {
+      this.mostrarExperiencia = true;
+      this.mostrarEducacion = false;
+    }
   }
 }

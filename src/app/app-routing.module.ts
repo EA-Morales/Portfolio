@@ -14,7 +14,7 @@ const routerOptions: ExtraOptions = {
   anchorScrolling: 'enabled',
   useHash: true,
   scrollOffset: [0, 64],
-}; // [x, y]};
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, routerOptions)],
