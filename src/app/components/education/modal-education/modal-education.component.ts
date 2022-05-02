@@ -29,6 +29,12 @@ export class ModalEducationComponent implements OnInit {
 
   ngOnInit(): void {
     this.educacionform = this.initEducacionForm();
+
+    this.educacionform.patchValue({
+      establecimiento: this.data.establecimiento,
+      especialidad: this.data.especialidad,
+      year: this.data.year,
+    });
   }
 
   initEducacionForm(): FormGroup {

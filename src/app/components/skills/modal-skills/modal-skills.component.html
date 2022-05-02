@@ -7,7 +7,7 @@
     class="datos-form">
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>titulo</mat-label>
-      <input formControlName="titulo" [ngModel]="data.titulo" matInput />
+      <input formControlName="titulo" matInput />
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
@@ -21,12 +21,14 @@
 
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>valor</mat-label>
-      <input formControlName="value" [ngModel]="data.value" matInput />
+      <input formControlName="value" matInput />
     </mat-form-field>
 
-    <mat-dialog-actions class="float-end">
-      <button type="submit" mat-raised-button mat-dialog-close>Enviar</button>
+    <mat-dialog-actions class="flex justify-between">
       <button mat-raised-button mat-dialog-close>Close</button>
+      <button type="submit" mat-raised-button mat-dialog-close color="accent">
+        Enviar
+      </button>
     </mat-dialog-actions>
   </form>
 </mat-dialog-content>

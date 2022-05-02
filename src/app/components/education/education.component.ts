@@ -37,7 +37,6 @@ export class EducationComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isUserLoggedIn.subscribe(res => {
       this.isLoggedIn = res;
-      //console.log(res);
     });
     this.getEducacion();
   }
@@ -50,6 +49,10 @@ export class EducationComponent implements OnInit {
 
   edit(dato: datos) {
     let dialogRef = this.dialog.open(ModalEducationComponent, {
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
       data: dato,
     });
 
@@ -67,16 +70,15 @@ export class EducationComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalEducationComponent, {
-      data: {
-        view: 'componente experiencia',
-        objeto: this.temporal,
-      },
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
+      data: this.prueba,
     });
 
     dialogRef.afterClosed().subscribe(res => {
       this.ngOnInit();
     });
-
-    //console.log(this.prueba);
   }
 }

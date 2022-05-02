@@ -45,11 +45,13 @@ export class AboutComponent implements OnInit {
       .subscribe(response => (this.texto = Object.values(response)));
   }
 
-  openDialog() {
+  openDialog(texto: any) {
     let dialogRef = this.dialog.open(ModalAboutComponent, {
-      height: '85vh',
-      width: '35vw',
-      data: 'componente about',
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
+      data: texto,
     });
 
     dialogRef.afterClosed().subscribe(res => {

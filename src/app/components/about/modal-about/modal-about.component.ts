@@ -1,6 +1,7 @@
 import { AboutService } from './../../../services/about.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-about',
@@ -11,12 +12,18 @@ export class ModalAboutComponent implements OnInit {
   aboutform!: FormGroup;
 
   constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: string,
     private readonly fb: FormBuilder,
     private _dataSvc: AboutService
   ) {}
 
   ngOnInit(): void {
     this.aboutform = this.initAboutForm();
+
+    this.aboutform.patchValue({
+      texto: this.data,
+    });
   }
 
   initAboutForm(): FormGroup {

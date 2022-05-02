@@ -39,6 +39,12 @@ export class ModalSkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.skillsform = this.initSkillsForm();
+
+    this.skillsform.patchValue({
+      titulo: this.data.titulo,
+      color: this.data.color,
+      value: this.data.value,
+    });
   }
 
   initSkillsForm(): FormGroup {

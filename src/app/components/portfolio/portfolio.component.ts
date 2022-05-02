@@ -70,7 +70,10 @@ export class PortfolioComponent implements OnInit {
 
   edit(proyect: proyects) {
     let dialogRef = this.dialog.open(ModalPortfolioComponent, {
-      width: '35vw',
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
       data: proyect,
     });
 
@@ -88,7 +91,10 @@ export class PortfolioComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalPortfolioComponent, {
-      width: '35vw',
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
       data: this.prueba,
     });
 

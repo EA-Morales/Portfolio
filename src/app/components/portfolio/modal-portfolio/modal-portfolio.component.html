@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>nuevo Modal de Proyectos</h2>
 
-<mat-dialog-content>
+<mat-dialog-content class="h-full">
   <form
     (ngSubmit)="onSubmitProyects()"
     [formGroup]="proyectsform"
@@ -21,14 +21,13 @@
         cols="30"
         formControlName="descripcion"
         matInput
-        rows="10"></textarea>
+        rows="5"></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Link</mat-label>
       <input formControlName="link" matInput />
     </mat-form-field>
-
     <mat-dialog-actions class="flex justify-between">
       <button mat-dialog-close mat-raised-button>Close</button>
       <button mat-dialog-close mat-raised-button color="accent" type="submit">

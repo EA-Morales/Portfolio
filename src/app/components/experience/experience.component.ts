@@ -49,6 +49,10 @@ export class ExperienceComponent implements OnInit {
 
   edit(dato: datos) {
     let dialogRef = this.dialog.open(ModalExperienceComponent, {
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
       data: dato,
     });
 
@@ -68,10 +72,11 @@ export class ExperienceComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalExperienceComponent, {
-      data: {
-        view: 'componente experiencia',
-        objeto: this.temporal,
-      },
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
+      data: this.prueba,
     });
 
     dialogRef.afterClosed().subscribe(res => {

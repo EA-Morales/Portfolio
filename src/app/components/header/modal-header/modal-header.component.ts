@@ -20,6 +20,12 @@ export class ModalHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.infopersonalform = this.datosform();
+
+    this.infopersonalform.patchValue({
+      nombreyapellido: this.data.nombreyapellido,
+      puesto: this.data.puesto,
+      ubicacion: this.data.ubicacion,
+    });
   }
 
   datosform(): FormGroup {

@@ -48,9 +48,11 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalHeaderComponent, {
-      height: '85vh',
-
-      data: 'datos personales',
+      height: '80vh',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
+      data: this.textoInfoPersonal,
     });
 
     dialogRef.afterClosed().subscribe(res => {

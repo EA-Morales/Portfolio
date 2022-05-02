@@ -1,26 +1,32 @@
 <h2 mat-dialog-title>Editar Descripcion</h2>
-<mat-dialog-content
-  class="h-full flex flex-col justify-between place-content-between content-between">
-  <form
-    [formGroup]="infopersonalform"
-    (ngSubmit)="onSubmitDatos()"
-    class="datos-form">
-    <mat-form-field class="example-full-width" appearance="outline">
+<mat-dialog-content class="h-5/6">
+  <form [formGroup]="infopersonalform" (ngSubmit)="onSubmitDatos()" class="">
+    <mat-form-field
+      class="example-full-width"
+      color="accent"
+      appearance="outline">
       <mat-label>Nombres y Apellido</mat-label>
-      <input formControlName="nombreyapellido" matInput value="" />
+      <input formControlName="nombreyapellido" matInput />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="outline">
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      color="accent">
       <mat-label>Puesto</mat-label>
-      <input formControlName="puesto" matInput value="" />
+      <input formControlName="puesto" matInput />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="outline">
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      color="accent">
       <mat-label>Ubicacion</mat-label>
-      <input formControlName="ubicacion" matInput value="" />
+      <input formControlName="ubicacion" matInput />
     </mat-form-field>
 
     <mat-dialog-actions class="flex justify-between">
+      <button class="" mat-raised-button mat-dialog-close>Close</button>
       <button
         class="bg-[#e96269] p-2 flex justify-self-center self-center"
         type="submit"
@@ -28,7 +34,6 @@
         mat-dialog-close>
         Enviar
       </button>
-      <button class="" mat-raised-button mat-dialog-close>Close</button>
     </mat-dialog-actions>
   </form>
 </mat-dialog-content>

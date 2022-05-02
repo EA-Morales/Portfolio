@@ -55,6 +55,10 @@ export class SkillsComponent implements OnInit {
 
   edit(skill: skills) {
     let dialogRef = this.dialog.open(ModalSkillsComponent, {
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
       data: skill,
     });
 
@@ -72,6 +76,10 @@ export class SkillsComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(ModalSkillsComponent, {
+      height: 'fit',
+      maxWidth: '500px',
+      minWidth: '200px',
+      width: '80vw',
       data: this.pruebas,
     });
 
