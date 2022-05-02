@@ -16,11 +16,13 @@
       id="menu-button"></i>
 
     <mat-menu #menu="matMenu">
-      <button class="hover:bg-[#e96269]" mat-menu-item>About Me</button>
-      <button mat-menu-item>Portfolio</button>
-      <button mat-menu-item>Experience</button>
-      <button mat-menu-item>Education</button>
-      <button mat-menu-item>Skills</button>
+      <button (click)="toAbout()" class="hover:bg-[#e96269]" mat-menu-item>
+        About Me
+      </button>
+      <button (click)="toPortfolio()" mat-menu-item>Portfolio</button>
+      <button (click)="toInfo()" mat-menu-item>Information</button>
+      <button (click)="toSkills()" mat-menu-item>Skills</button>
+      <button (click)="toContact()" mat-menu-item>Contact</button>
       <a
         *ngIf="isLoggedIn === false"
         class="block hover:text-[#e72f36] text-[#e96269]"
@@ -43,6 +45,7 @@
       <ul class="text-base text-gray-700 md:flex gap-4">
         <li>
           <a
+            role="button"
             class="block hover:text-[#e96269]"
             (click)="toAbout()"
             routerLinkActive="about"
@@ -50,25 +53,37 @@
           >
         </li>
         <li>
-          <a class="block hover:text-[#e96269]" (click)="toPortfolio()"
+          <a
+            role="button"
+            class="block hover:text-[#e96269]"
+            (click)="toPortfolio()"
             >Portfolio</a
           >
         </li>
         <li>
-          <a class="block hover:text-[#e96269]" (click)="toInfo()"
-            >Informacion</a
-          >
-        </li>
-        <li>
-          <a class="block hover:text-[#e96269]" (click)="toSkills()">Skills</a>
-        </li>
-        <li>
-          <a class="block hover:text-[#e96269]" (click)="toContact()"
-            >Contacto</a
+          <a role="button" class="block hover:text-[#e96269]" (click)="toInfo()"
+            >Information</a
           >
         </li>
         <li>
           <a
+            role="button"
+            class="block hover:text-[#e96269]"
+            (click)="toSkills()"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
+            class="block hover:text-[#e96269]"
+            (click)="toContact()"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            role="button"
             *ngIf="isLoggedIn === false"
             class="block hover:text-[#e72f36] text-[#e96269]"
             href="/login"
@@ -76,6 +91,7 @@
             >Login</a
           >
           <a
+            role="button"
             *ngIf="isLoggedIn === true"
             (click)="logout()"
             class="block hover:text-[#e72f36] text-[#e96269]"

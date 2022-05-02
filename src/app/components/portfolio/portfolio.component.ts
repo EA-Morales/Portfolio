@@ -63,9 +63,9 @@ export class PortfolioComponent implements OnInit {
   }
 
   getProyects(): any {
-    this._dataSvc
-      .getProyects()
-      .subscribe(Response => (this.prueba = Object.values(Response)));
+    this._dataSvc.getProyects().subscribe(Response => {
+      (this.prueba = Object.values(Response)), console.log(this.prueba);
+    });
   }
 
   edit(proyect: proyects) {
