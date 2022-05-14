@@ -1,7 +1,12 @@
 import { BannerService } from './../../../services/banner.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { infoPersonal } from 'src/app/models/interfaceDatos';
 
 @Component({
@@ -32,10 +37,22 @@ export class ModalHeaderComponent implements OnInit {
   datosform(): FormGroup {
     return this.fb.group({
       id: [1],
-      nombreyapellido: [''],
-      puesto: [''],
-      ubicacion: [''],
+      nombreyapellido: new FormControl('', [Validators.required]),
+      puesto: new FormControl('', [Validators.required]),
+      ubicacion: new FormControl('', [Validators.required]),
     });
+  }
+
+  get errorNombreyApellido() {
+    return this.infopersonalform.get('nombreyapellido');
+  }
+
+  get errorPuesto() {
+    return this.infopersonalform.get('puesto');
+  }
+
+  get errorUbicacion() {
+    return this.infopersonalform.get('ubicacion');
   }
 
   onSubmitDatos() {

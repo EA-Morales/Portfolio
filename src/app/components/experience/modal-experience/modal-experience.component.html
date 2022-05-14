@@ -8,21 +8,33 @@
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Establecimiento</mat-label>
       <input formControlName="establecimiento" matInput />
+      <mat-error *ngIf="errorEstablecimiento?.invalid"
+        >Complete required field</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Especialidad</mat-label>
       <input formControlName="especialidad" matInput />
+      <mat-error *ngIf="errorEspecialidad?.invalid"
+        >Complete required field</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>año</mat-label>
       <input formControlName="year" matInput />
+      <mat-error *ngIf="errorYear?.invalid">Complete required field</mat-error>
     </mat-form-field>
 
     <mat-dialog-actions class="flex justify-between">
-      <button mat-raised-button mat-dialog-close>Close</button>
-      <button type="submit" mat-raised-button mat-dialog-close color="accent">
+      <button mat-raised-button mat-dialog-close color="primary">Close</button>
+      <button
+        [disabled]="experienciaForm.invalid"
+        type="submit"
+        mat-raised-button
+        mat-dialog-close
+        color="accent">
         Enviar
       </button>
     </mat-dialog-actions>

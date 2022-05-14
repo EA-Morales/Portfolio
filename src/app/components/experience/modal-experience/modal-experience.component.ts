@@ -1,6 +1,11 @@
 import { ExperienceService } from './../../../services/experience.service';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { datos } from 'src/app/models/interfaceDatos';
 
@@ -31,11 +36,23 @@ export class ModalExperienceComponent implements OnInit {
 
   initExperienciaForm(): FormGroup {
     return this.fb.group({
-      id: [],
-      establecimiento: [],
-      especialidad: [],
-      year: [],
+      id: new FormControl(''),
+      establecimiento: new FormControl('', [Validators.required]),
+      especialidad: new FormControl('', [Validators.required]),
+      year: new FormControl('', [Validators.required]),
     });
+  }
+
+  get errorEstablecimiento() {
+    return this.experienciaForm.get('establecimiento');
+  }
+
+  get errorEspecialidad() {
+    return this.experienciaForm.get('especialidad');
+  }
+
+  get errorYear() {
+    return this.experienciaForm.get('year');
   }
 
   onSubmitExperiencia() {

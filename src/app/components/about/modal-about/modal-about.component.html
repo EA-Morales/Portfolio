@@ -1,4 +1,4 @@
-<h2 mat-dialog-title class="">Edit about Me</h2>
+<h2 mat-dialog-title class="">Edit about me</h2>
 <mat-dialog-content class="h-full">
   <form [formGroup]="aboutform" (ngSubmit)="onSubmitAbout()" class="">
     <mat-form-field
@@ -13,10 +13,16 @@
         id="texto"
         cols="100"
         rows="10"></textarea>
+      <mat-error *ngIf="errorAbout?.invalid">No puede estar vacio</mat-error>
     </mat-form-field>
     <mat-dialog-actions class="flex justify-between">
       <button mat-raised-button mat-dialog-close color="primary">Close</button>
-      <button type="submit" mat-raised-button color="accent" mat-dialog-close>
+      <button
+        [disabled]="errorAbout?.invalid"
+        type="submit"
+        mat-raised-button
+        color="accent"
+        mat-dialog-close>
         Enviar
       </button>
     </mat-dialog-actions>

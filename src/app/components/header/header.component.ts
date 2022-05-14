@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
 
   openDialog(texto: infoPersonal) {
     let dialogRef = this.dialog.open(ModalHeaderComponent, {
-      height: '80vh',
+      height: 'content',
       maxWidth: '500px',
       minWidth: '200px',
       width: '80vw',

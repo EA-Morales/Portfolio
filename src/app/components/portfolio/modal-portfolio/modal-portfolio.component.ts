@@ -5,7 +5,12 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 // FORMULARIOS
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 // ANGULAR MATERIAL DIALOG
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -41,12 +46,28 @@ export class ModalPortfolioComponent implements OnInit {
 
   initProyectsForm(): FormGroup {
     return this.fb.group({
-      id: [],
-      img: [],
-      titulo: [],
-      descripcion: [],
-      link: [],
+      id: new FormControl(''),
+      img: new FormControl('', [Validators.required]),
+      titulo: new FormControl('', [Validators.required]),
+      descripcion: new FormControl('', [Validators.required]),
+      link: new FormControl('', [Validators.required]),
     });
+  }
+
+  get errorImg() {
+    return this.proyectsform.get('img');
+  }
+
+  get errorTitulo() {
+    return this.proyectsform.get('titulo');
+  }
+
+  get errorDescripcion() {
+    return this.proyectsform.get('descripcion');
+  }
+
+  get errorLink() {
+    return this.proyectsform.get('link');
   }
 
   onSubmitProyects() {

@@ -5,7 +5,12 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { SkillsService } from 'src/app/services/skills.service';
 
 // FORMULARIOS SKILLS
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 // ANGULAR MATERIAL DIALOG
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -49,11 +54,26 @@ export class ModalSkillsComponent implements OnInit {
 
   initSkillsForm(): FormGroup {
     return this.fb.group({
-      id: [],
-      titulo: [],
-      color: [],
-      value: [],
+      id: new FormControl(''),
+      titulo: new FormControl('', [Validators.required]),
+      color: new FormControl('', [Validators.required]),
+      value: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(2),
+      ]),
     });
+  }
+
+  get errorTitulo() {
+    return this.skillsform.get('titulo');
+  }
+
+  get errorColor() {
+    return this.skillsform.get('color');
+  }
+
+  get errorValue() {
+    return this.skillsform.get('value');
   }
 
   onSubmitSkills() {

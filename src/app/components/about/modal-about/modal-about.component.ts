@@ -1,6 +1,11 @@
 import { AboutService } from './../../../services/about.service';
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -29,8 +34,12 @@ export class ModalAboutComponent implements OnInit {
   initAboutForm(): FormGroup {
     return this.fb.group({
       id: [1],
-      texto: [''],
+      texto: new FormControl('', [Validators.required]),
     });
+  }
+
+  get errorAbout() {
+    return this.aboutform.get('texto');
   }
 
   onSubmitAbout() {

@@ -1,6 +1,11 @@
 import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -26,9 +31,17 @@ export class LoginComponent implements OnInit {
 
   loginform(): FormGroup {
     return this.fb.group({
-      username: [''],
-      password: [''],
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     });
+  }
+
+  get userLogin() {
+    return this.loginForm.get('username');
+  }
+
+  get passwordLogin() {
+    return this.loginForm.get('password');
   }
 
   onSubmitLogin() {

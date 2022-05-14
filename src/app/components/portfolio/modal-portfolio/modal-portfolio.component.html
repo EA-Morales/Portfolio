@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>nuevo Modal de Proyectos</h2>
+<h2 mat-dialog-title>Edit portfolio</h2>
 
 <mat-dialog-content class="h-full">
   <form
@@ -8,11 +8,17 @@
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Imagen</mat-label>
       <input formControlName="img" matInput />
+      <mat-error *ngIf="errorImg?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Titulo</mat-label>
       <input formControlName="titulo" matInput />
+      <mat-error *ngIf="errorTitulo?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
@@ -22,15 +28,26 @@
         formControlName="descripcion"
         matInput
         rows="5"></textarea>
+      <mat-error *ngIf="errorDescripcion?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="example-full-width">
       <mat-label>Link</mat-label>
       <input formControlName="link" matInput />
+      <mat-error *ngIf="errorLink?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
     <mat-dialog-actions class="flex justify-between">
-      <button mat-dialog-close mat-raised-button>Close</button>
-      <button mat-dialog-close mat-raised-button color="accent" type="submit">
+      <button mat-dialog-close mat-raised-button color="primary">Close</button>
+      <button
+        [disabled]="proyectsform.invalid"
+        mat-dialog-close
+        mat-raised-button
+        color="accent"
+        type="submit">
         Enviar
       </button>
     </mat-dialog-actions>

@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>nuevo Modal de Skills</h2>
+<h2 mat-dialog-title>Skills form</h2>
 
 <mat-dialog-content>
   <form
@@ -8,6 +8,9 @@
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>titulo</mat-label>
       <input formControlName="titulo" matInput />
+      <mat-error *ngIf="errorTitulo?.invalid"
+        >Complete required field</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
@@ -17,16 +20,33 @@
           color.value
         }}</mat-option>
       </mat-select>
+      <mat-error *ngIf="errorColor?.invalid">Complete required field</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>valor</mat-label>
       <input formControlName="value" matInput />
+      <mat-error
+        *ngIf="
+          errorValue?.invalid && (errorValue?.dirty || errorValue?.touched)
+        ">
+        <mat-error *ngIf="errorValue?.errors?.['maxlength']"
+          >Max character 2</mat-error
+        >
+        <mat-error *ngIf="errorValue?.errors?.['required']"
+          >Complete required field</mat-error
+        >
+      </mat-error>
     </mat-form-field>
 
     <mat-dialog-actions class="flex justify-between">
-      <button mat-raised-button mat-dialog-close>Close</button>
-      <button type="submit" mat-raised-button mat-dialog-close color="accent">
+      <button mat-raised-button mat-dialog-close color="primary">Close</button>
+      <button
+        [disabled]="skillsform.invalid"
+        type="submit"
+        mat-raised-button
+        mat-dialog-close
+        color="accent">
         Enviar
       </button>
     </mat-dialog-actions>

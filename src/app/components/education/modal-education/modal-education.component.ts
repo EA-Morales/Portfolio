@@ -5,7 +5,12 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { EducationService } from './../../../services/education.service';
 
 // FORMULARIOS
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 // ANGULAR MATERIAL DIALOG
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -39,11 +44,23 @@ export class ModalEducationComponent implements OnInit {
 
   initEducacionForm(): FormGroup {
     return this.fb.group({
-      id: [],
-      establecimiento: [],
-      especialidad: [],
-      year: [],
+      id: new FormControl(''),
+      establecimiento: new FormControl('', [Validators.required]),
+      especialidad: new FormControl('', [Validators.required]),
+      year: new FormControl('', [Validators.required]),
     });
+  }
+
+  get errorEstablecimiento() {
+    return this.educacionform.get('establecimiento');
+  }
+
+  get errorEspecialidad() {
+    return this.educacionform.get('especialidad');
+  }
+
+  get errorYear() {
+    return this.educacionform.get('year');
   }
 
   onSubmitEducacion() {

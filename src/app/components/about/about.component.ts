@@ -47,7 +47,7 @@ export class AboutComponent implements OnInit {
 
   openDialog(texto: any) {
     let dialogRef = this.dialog.open(ModalAboutComponent, {
-      height: 'fit',
+      height: 'content',
       maxWidth: '500px',
       minWidth: '200px',
       width: '80vw',

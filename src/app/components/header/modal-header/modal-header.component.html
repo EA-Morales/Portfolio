@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Editar Descripcion</h2>
+<h2 mat-dialog-title>Edit description</h2>
 <mat-dialog-content class="h-5/6">
   <form [formGroup]="infopersonalform" (ngSubmit)="onSubmitDatos()" class="">
     <mat-form-field
@@ -7,6 +7,9 @@
       appearance="outline">
       <mat-label>Nombres y Apellido</mat-label>
       <input formControlName="nombreyapellido" matInput />
+      <mat-error *ngIf="errorNombreyApellido?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field
@@ -15,6 +18,9 @@
       color="accent">
       <mat-label>Puesto</mat-label>
       <input formControlName="puesto" matInput />
+      <mat-error *ngIf="errorPuesto?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field
@@ -23,13 +29,20 @@
       color="accent">
       <mat-label>Ubicacion</mat-label>
       <input formControlName="ubicacion" matInput />
+      <mat-error *ngIf="errorUbicacion?.invalid"
+        >Complete el campo requerido</mat-error
+      >
     </mat-form-field>
 
     <mat-dialog-actions class="flex justify-between">
-      <button class="" mat-raised-button mat-dialog-close>Close</button>
+      <button class="" mat-raised-button mat-dialog-close color="primary">
+        Close
+      </button>
       <button
+        [disabled]="infopersonalform.invalid"
         class="bg-[#e96269] p-2 flex justify-self-center self-center"
         type="submit"
+        color="accent"
         mat-raised-button
         mat-dialog-close>
         Enviar
