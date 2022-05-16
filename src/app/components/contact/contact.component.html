@@ -4,10 +4,10 @@
     <div class="mt-8 overflow-hidden">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-20">
         <div class="p-6 mr-2 sm:rounded-lg">
-          <h1
+          <h3
             class="text-4xl sm:text-5xl text-[#e96269] font-extrabold tracking-tight">
             Get in touch
-          </h1>
+          </h3>
           <p
             class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
             Coming soon
@@ -35,39 +35,51 @@
         </div>
 
         <form class="p-6 flex flex-col justify-center">
-          <div class="flex flex-col">
-            <label for="name" class="hidden">Full Name</label>
+          <mat-form-field
+            appearance="outline"
+            color="accent"
+            class="flex flex-col">
+            <mat-label>Full Name</mat-label>
             <input
+              disabled
+              matInput
               type="name"
               name="name"
               id="name"
               placeholder="Full Name"
               class="w-100 mt-2 py-3 px-3 rounded-lg border border-[#ffd5d5] text-gray-800 font-semibold focus:border-[#ffd5d5] focus:outline-none" />
-          </div>
+          </mat-form-field>
 
-          <div class="flex flex-col mt-2">
-            <label for="email" class="hidden">Email</label>
+          <mat-form-field
+            appearance="outline"
+            color="accent"
+            class="flex flex-col mt-2">
+            <mat-label>Email</mat-label>
             <input
+              disabled
+              matInput
               type="email"
               name="email"
               id="email"
               placeholder="Email"
               class="w-100 mt-2 py-3 px-3 rounded-lg border border-[#ffd5d5] text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none" />
-          </div>
+          </mat-form-field>
 
-          <div class="flex flex-col mt-2">
-            <label for="tel" class="hidden">Number</label>
+          <mat-form-field appearance="outline" class="flex flex-col mt-2">
+            <mat-label>Message</mat-label>
             <textarea
+              disabled
+              matInput
               placeholder="Text me"
               name=""
               id=""
               rows="05"
               class="w-100 mt-2 py-3 px-3 rounded-lg border-[#ffd5d5] border text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"></textarea>
-          </div>
+          </mat-form-field>
 
           <button
             type="submit"
-            disabled
+            disable
             class="md:w-32 bg-[#e96269] hover:bg-[#e72f36] text-white font-bold py-3 px-6 rounded-lg mt-3 transition ease-in-out duration-300">
             Disable
           </button>
